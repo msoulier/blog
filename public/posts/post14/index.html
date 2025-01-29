@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Post14 - But I Digress</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="But I Digress" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">But I Digress</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Post14</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-01-29T07:55:45-05:00">2025-01-29</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="brewing-a-better-unix">Brewing a better UNIX</h1>
+<dl>
+<dt>date</dt>
+<dd>
+<p>2012-12-09 08:00</p>
+</dd>
+<dt>category</dt>
+<dd>
+<p>Technology</p>
+</dd>
+<dt>author</dt>
+<dd>
+<p>Michael P. Soulier</p>
+</dd>
+<dt>tags</dt>
+<dd>
+<p>OS X, UNIX, FOSS</p>
+</dd>
+<dt>slug</dt>
+<dd>
+<p>brewing-a-better-unix</p>
+</dd>
+</dl>
+<p>Being a <a href="http://www.linux.org/">Linux</a> user, I'm used to a fairly
+standard set of tools on my command-line. On <a href="http://www.apple.com/osx/">OS
+X</a>, it's essentially BSD UNIX underneath,
+which I have had some experience with thanks to
+<a href="http://www.freebsd.org/">FreeBSD</a>. The environment is very similar, but
+not identical, and on <a href="http://www.freebsd.org/">FreeBSD</a>, you quickly
+find yourself using the ports system to install new packages that have
+been ported to <a href="http://www.freebsd.org/">FreeBSD</a> from places like
+<a href="http://www.linux.org/">Linux</a>.</p>
+<p>It took about five minutes of <a href="http://www.freebsd.org/">FreeBSD</a> use for
+me to go install <code>bash</code>, <code>wget</code>, <code>vim</code>, <code>imagemagick</code>, and a host of
+other packages. There's a lot already installed with <a href="http://www.apple.com/osx/">OS
+X</a>, but a few key things or me were
+definitely missing. I pulled <code>vim</code> from
+<a href="http://code.google.com/p/macvim/">MacVim</a>, but then I had to look for
+somewhere to get everything else I needed.</p>
+<p>Being UNIX, I had several choices:</p>
+<blockquote>
+<ol>
+<li>Grab the source and build it myself.</li>
+<li>Install <a href="http://www.macports.org/">MacPorts</a> and build it from
+there.</li>
+<li>Install <a href="http://mxcl.github.com/homebrew/">Homebrew</a> and build it
+from there.</li>
+</ol>
+</blockquote>
+<p>Well, I've done source installs, I've done ports out of FreeBSD, so I
+figured I'd see how <a href="http://mxcl.github.com/homebrew/">Homebrew</a> works.
+Basically, it makes <code>/usr/local</code> owned by the user that installs it,
+which on <a href="http://www.apple.com/osx/">OS X</a> is me, as an administrative
+user (like a Windows power user). From there you can double-check that
+everything is set up properly by running:</p>
+<pre><code>brew doctor
+</code></pre>
+<p>It will pick up permission problems, issues with your <code>PATH</code> environment
+variable, warn you about packages that were built but not symlinked into
+<code>/usr/local</code> properly, etc. Then it's not much different than using
+<code>apt-get</code> on Debian, except that the packages are building when they
+install, they're not pre-built binaries. So wget was just:</p>
+<pre><code>brew update
+brew install wget
+</code></pre>
+<p>Since then I've installed some essentials, and non-essentials if I
+include <code>freeciv</code>. Lets see, I have:</p>
+<pre><code>msoulier@merlin:~$ brew list
+c-ares      git         lame        lua     sdl_mixer
+cracklib    glib        libevent    lynx    tmux
+feh         gmp         libffi      mutt    tokyo-cabinet
+flac        gnupg       libgcrypt   nettle  unrar
+fontconfig  gnuplot     libgpg-error p11-kit wget
+freeciv     gnutls      libmikmod   pcre    xz
+freetype    imagemagick libogg      pkg-config
+gd          imlib2      libpng      readline
+gettext     irssi       libtasn1    sdl
+giblib      jpeg        libvorbis   sdl_image
+</code></pre>
+<p>Rather nicely, the packages are all installed under
+<code>/usr/local/Cellar/</code>, and symlinked into the right places so they show
+up in my path, and for building. As I really hate installing from
+source, because you never know what you have installed or how to
+uninstall it, or what you'll break if you upgrade it, I like this.</p>
+<p>I do find that other packages mess with those careful permissions, so I
+keep running <code>brew doctor</code> so I know about the issues. I also noticed,
+thanks to a coworker, that the Perl community has done something similar
+for install Perl modules called Perlbrew. I'm going to look into that
+soon, as honestly, it's about damn time. Managing personal Perl modules
+sucks, has always sucked, and now thanks to Perlbrew will hopefully suck
+no longer. But I digress, more on that in another post.</p>
+<p>I give <a href="http://mxcl.github.com/homebrew/">Homebrew</a> an <em>A</em>. An <em>A+</em>
+would be a command to fix permissions problems without my help, and
+maybe there is one, these things elude me at times. I highly recommend
+it if you're trying to complete your *nix environment on OS X.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/post15/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Post15</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/post13/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Post13</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Michael Soulier.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

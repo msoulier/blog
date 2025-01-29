@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Post18 - But I Digress</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="But I Digress" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">But I Digress</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Post18</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-01-29T07:55:45-05:00">2025-01-29</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="checking-the-weather">Checking the weather</h1>
+<dl>
+<dt>date</dt>
+<dd>
+<p>2012-12-23 20:30</p>
+</dd>
+<dt>category</dt>
+<dd>
+<p>Development</p>
+</dd>
+<dt>author</dt>
+<dd>
+<p>Michael P. Soulier</p>
+</dd>
+<dt>tags</dt>
+<dd>
+<p>Python</p>
+</dd>
+<dt>slug</dt>
+<dd>
+<p>checking-the-weather</p>
+</dd>
+</dl>
+<p>A while back I needed a way to check the weather forecast, simply, from
+a terminal, as is the preference of most Unix geeks like me. Being a
+Canadian, I'm not interested in the Weather Channel as much as the
+Environment Canada data. Thankfully, they do publish an RSS feed, and
+good for them.</p>
+<p>I'm interested in this one:
+<a href="http://www.weatheroffice.gc.ca/rss/city/on-118_e.xml">http://www.weatheroffice.gc.ca/rss/city/on-118_e.xml</a>. So, to check the
+weather, I need to pull the feed and parse it. Pulling a page in Python
+is as simple as using <code>urllib</code>. From there, I can walk the elements I
+want like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> xml.etree.ElementTree <span style="color:#f92672">import</span> parse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> elem <span style="color:#f92672">in</span> parse(urllib<span style="color:#f92672">.</span>urlopen(rssfeed))<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;channel/item/title&#39;</span>):
+</span></span></code></pre></div><p>Now, I wanted the option of picking a certain number of lines, and
+wrapping at a certain number of columns. I wanted this for using the
+script output as input into other apps, like
+<a href="http://conky.sourceforge.net/">Conky</a>. Skipping lines is easy,
+intelligently wrapping them is not. Luckily, Python has a <code>textwrap</code>
+module in the standard library.</p>
+<p>You use it like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> textwrap
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wrapper <span style="color:#f92672">=</span> textwrap<span style="color:#f92672">.</span>TextWrapper(width<span style="color:#f92672">=</span>options<span style="color:#f92672">.</span>wrap, subsequent_indent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;    &#34;</span>)
+</span></span><span style="display:flex;"><span>lines <span style="color:#f92672">=</span> wrapper<span style="color:#f92672">.</span>wrap(s)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
+</span></span><span style="display:flex;"><span>    print line
+</span></span></code></pre></div><p>Put together, it's really that simple. I think the majority of my code
+is option parsing. The core loop is just this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options <span style="color:#f92672">=</span> parse_options()
+</span></span><span style="display:flex;"><span>wrapper <span style="color:#f92672">=</span> textwrap<span style="color:#f92672">.</span>TextWrapper(width<span style="color:#f92672">=</span>options<span style="color:#f92672">.</span>wrap, subsequent_indent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;    &#34;</span>)
+</span></span><span style="display:flex;"><span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> elem <span style="color:#f92672">in</span> parse(urllib<span style="color:#f92672">.</span>urlopen(rssfeed))<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;channel/item/title&#39;</span>):
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> elem<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf8&#39;</span>, <span style="color:#e6db74">&#39;ignore&#39;</span>)
+</span></span><span style="display:flex;"><span>    lines <span style="color:#f92672">=</span> wrapper<span style="color:#f92672">.</span>wrap(s)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
+</span></span><span style="display:flex;"><span>        count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> options<span style="color:#f92672">.</span>lines <span style="color:#f92672">and</span> count <span style="color:#f92672">&gt;</span> options<span style="color:#f92672">.</span>lines:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            print line
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">break</span>
+</span></span></code></pre></div><p>The whole thing <a href="https://github.com/msoulier/mikes-tools/blob/master/weather.py">is
+here</a>.
+Sample output looks like this:</p>
+<pre><code>No watches or warnings in effect, Ottawa (Kanata - Orléans)
+Current Conditions: Light Snow, -11.1°C
+Sunday night: A few flurries. Low minus 18.
+Monday: Sunny. High minus 9.
+Monday night: Increasing cloudiness. Low minus 12.
+Tuesday: Chance of flurries. High minus 7. POP 60%
+Wednesday: A mix of sun and cloud. Low minus 16. High minus 8.
+Thursday: Periods of snow. Low minus 8. High minus 2.
+Friday: Sunny. Low minus 12. High minus 7.
+Saturday: Periods of snow. Low minus 12. High minus 7.
+</code></pre>
+<p>I love building my own tools like this, it's the ultimate in end-user
+computing. Unix and Python are my playground.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/post19/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Post19</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/post17/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Post17</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Michael Soulier.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Post17 - But I Digress</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="But I Digress" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">But I Digress</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Post17</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-01-29T07:55:45-05:00">2025-01-29</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="signatures-in-oauth">Signatures in OAuth</h1>
+<dl>
+<dt>date</dt>
+<dd>
+<p>2012-12-21 18:00</p>
+</dd>
+<dt>category</dt>
+<dd>
+<p>Technology</p>
+</dd>
+<dt>author</dt>
+<dd>
+<p>Michael P. Soulier</p>
+</dd>
+<dt>tags</dt>
+<dd>
+<p>OAuth, Web Services, Python, Perl</p>
+</dd>
+<dt>slug</dt>
+<dd>
+<p>signatures-in-oauth</p>
+</dd>
+</dl>
+<p>Hi again. I already went into the basics of OAuth in a <a href="http://www.but-i-digress.ca/understanding-oauth.html">previous
+post</a>, and alluded
+to the signatures being the hard part of the implementation. I'm using
+a <a href="https://github.com/leah/python-oauth/">python-oauth</a> module for the
+client, but for the server, I decided to implement my own in
+<a href="http://www.perl.org/">Perl</a> and <a href="http://mojolicio.us/">Mojolicious</a>,
+since I had problems with
+<a href="http://search.cpan.org/dist/Net-OAuth/lib/Net/OAuth.pm">Net::OAuth</a>
+that I deemed a protocol violation. Besides, I learn more this way.</p>
+<p>There are multiple signature methods supported in OAuth 1.0,
+specifically three.</p>
+<blockquote>
+<ol>
+<li>PLAINTEXT</li>
+<li>HMAC-SHA1</li>
+<li>RSA-SHA1</li>
+</ol>
+</blockquote>
+<p>Unsurprisingly, <code>PLAINTEXT</code> is the simplest. In this case, the signature
+is a simple combination of the consumer secret and the token secret, if
+there is any yet, with a slight twist. To ensure that the characters are
+treated properly, they must first be &quot;normalized&quot;. This means decoding
+them as you would any percent-encoded string, and then...</p>
+<blockquote>
+<ul>
+<li>
+<p>convert them to UTF-8</p>
+</li>
+<li>
+<p>escape them with percent-encoding from RFC 3986 like so</p>
+<blockquote>
+<ul>
+<li>these characters are not encoded: alphanumerics, &quot;-&quot;,
+&quot;.&quot;, &quot;_&quot;, &quot;~&quot;</li>
+<li>all other characters <em>must</em> be encoded</li>
+<li>any hexidecimal used in encoding must be upper-case</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>I found that hard to read, but I did find this bit of Perl to solve the
+problem in <code>Net::OAuth</code>, which I converted to a Mojolicious helper.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>helper encode <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $self <span style="color:#f92672">=</span> shift;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $str <span style="color:#f92672">=</span> shift;
+</span></span><span style="display:flex;"><span>    $str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#66d9ef">unless</span> defined $str;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unless</span>($SKIP_UTF8_DOUBLE_ENCODE_CHECK) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($str <span style="color:#f92672">=~</span><span style="color:#e6db74"> /[\x80-\xFF]/</span> <span style="color:#f92672">and</span> <span style="color:#f92672">!</span>utf8::is_utf8($str)) {
+</span></span><span style="display:flex;"><span>            warn(<span style="color:#e6db74">&#34;your OAuth message appears to contain some &#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;multi-byte characters that need to be decoded &#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;via Encode.pm or a PerlIO layer first. &#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;This may result in an incorrect signature.&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    URI::Escape::uri_escape_utf8($str,<span style="color:#e6db74">&#39;^\w.~-&#39;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Decoding is even simpler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>helper decode <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $self <span style="color:#f92672">=</span> shift;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $str <span style="color:#f92672">=</span> shift;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> uri_unescape($str);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>In Python, the same code looks like so.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">escape</span>(s):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Escape a URL including any /.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> urllib<span style="color:#f92672">.</span>quote(s, safe<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;~&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_utf8_str</span>(s):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Convert unicode to utf-8.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> isinstance(s, unicode):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> s<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> str(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>escaped <span style="color:#f92672">=</span> escape(_utf8_str(s))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unquoting is just</span>
+</span></span><span style="display:flex;"><span>unquoted <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>unquote(s)
+</span></span></code></pre></div><p>So, this needs to be done to each of the parameters, in this case, the
+consumer key and the token secret, if any, and then they are combined
+with an ampersand. So, if your consumer key is, say, &quot;myconsumerkey&quot;,
+and you don't have a token yet, then the initial <code>PLAINTEXT</code> signature
+is <code>myconsumerkey&amp;</code>.</p>
+<p>Now, this isn't too bad, but once you get into <code>HMAC-SHA1</code> signatures,
+it gets a lot worse. The signature from the <code>PLAINTEXT</code> method becomes
+the key for the signature, and you'll already have the code for that
+now, but the raw input to the <code>HMAC-SHA1</code> algorithm is a base string,
+that is rather difficult to construct. The input is the HTTP method, the
+request URI, both normalized like above and contatenated with an
+ampersand. Then, this will be contatenated with an ampersand to all of
+the input parameters in the request, constructed in a particular way.</p>
+<blockquote>
+<ol>
+<li>Take all input parameter names and values from all sources, and
+normalize them like above. (but skip the oauth_signature
+parameter)</li>
+<li>Sort all parameters by the normalized parameter name.</li>
+<li>Pair the names and values, contatenated with an &quot;=&quot;.</li>
+<li>Concatenate all pairs with ampersands in the sorted order.</li>
+<li>Escape the entire string using the method above.</li>
+</ol>
+</blockquote>
+<p>This is the base string to the <code>HMAC-SHA1</code> algorithm, along with the key
+we mentioned. The final signature should match what the client
+generated. Oh, and if you're running your service on a nonstandard port
+(80 or 443), then you <em>must</em> include the port in the URI.</p>
+<p>Example:</p>
+<p>A call to <a href="http://localhost/initiate">http://localhost/initiate</a> on port 80 or 443, a GET request,
+with the following params:</p>
+<pre><code>{'oauth_nonce': '21823552', 'oauth_timestamp': 1356129798,
+ 'oauth_consumer_key': 'Mitel test', 'oauth_signature_method': 'HMAC-SHA1',
+ 'oauth_version': '1.0', 'oauth_signature': 'pevzNqSnJ8QtqFUDWVlYhVRp8D0=',
+ 'oauth_callback': 'oob'}
+</code></pre>
+<p>The base string would look like this:</p>
+<pre><code>GET&amp;http%3A%2F%2Flocalhost%2Finitiate&amp;oauth_callback%3Doob%26oauth_consumer_key%3DMitel%2520test%26oauth_nonce%3D21823552%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1356129798%26oauth_version%3D1.0
+</code></pre>
+<p>with a key of:</p>
+<pre><code>mitelsharedsecret&amp;
+</code></pre>
+<p>and a final signature of:</p>
+<pre><code>pevzNqSnJ8QtqFUDWVlYhVRp8D0=
+</code></pre>
+<p>Oddly, if I used the <code>b64encode</code> method in <code>Digest::HMAC_SHA1</code>, a final
+&quot;=&quot; sign is missing on the final result, so I had to pull in
+<code>MIME::Base64</code> and do this instead:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $sig <span style="color:#f92672">=</span> encode_base64($hmac<span style="color:#f92672">-&gt;</span>digest);
+</span></span></code></pre></div><p>The equivalent Python in the <code>oauth</code> library does this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> binascii
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># HMAC object.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> hashlib <span style="color:#75715e"># 2.5</span>
+</span></span><span style="display:flex;"><span>    hashed <span style="color:#f92672">=</span> hmac<span style="color:#f92672">.</span>new(key, raw, hashlib<span style="color:#f92672">.</span>sha1)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> sha <span style="color:#75715e"># Deprecated</span>
+</span></span><span style="display:flex;"><span>    hashed <span style="color:#f92672">=</span> hmac<span style="color:#f92672">.</span>new(key, raw, sha)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calculate the digest base 64.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> binascii<span style="color:#f92672">.</span>b2a_base64(hashed<span style="color:#f92672">.</span>digest())[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span></code></pre></div><p>That just leaves <code>RSA-SHA1</code>, but that requires a pre-existing SSL
+relationship with the server, using SSL certificates. As such, I'm not
+worrying about it just yet. I don't think it'll be used much.</p>
+<p>I'll need to do some interop testing with a few different clients, I'm
+hoping that they're not all snowflakes. The point of the rigid nature
+of the base string construction is that the final product is supposed to
+be reproducable.</p>
+<p>The base string construction is definitely the hardest part, and I've
+read that the signatures were dropped in OAuth 2.0 because they were too
+hard to do. I'd rather not drop the added security, and while they're
+a pain, there are sample implementations to follow. I think that OAuth
+1.0 is a better choice. And it's, like, finished.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/post18/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Post18</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/post1/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Post1</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Michael Soulier.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

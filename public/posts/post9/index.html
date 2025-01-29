@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Post9 - But I Digress</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="But I Digress" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">But I Digress</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Post9</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-01-29T07:55:45-05:00">2025-01-29</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="suspend-on-lid-close-in-debian-squeeze">Suspend on lid close in Debian Squeeze</h1>
+<dl>
+<dt>date</dt>
+<dd>
+<p>2012-11-20 22:10</p>
+</dd>
+<dt>category</dt>
+<dd>
+<p>Technology</p>
+</dd>
+<dt>author</dt>
+<dd>
+<p>Michael P. Soulier</p>
+</dd>
+<dt>tags</dt>
+<dd>
+<p>Linux, FOSS, Python</p>
+</dd>
+<dt>slug</dt>
+<dd>
+<p>suspend-on-lid-close-debian-squeeze</p>
+</dd>
+</dl>
+<p>I recently decided that <a href="http://www.gnome.org">Gnome</a> is not the best
+desktop for my little <a href="http://www.asus.com/Eee/">EeePC</a> netbook with a
+little 10.5&quot; screen. So I'm playing around with a window manager that
+mainly just maximizes everything. I've tried
+<a href="http://www.nongnu.org/ratpoison/">Ratpoison</a>, I've tried
+<a href="https://code.google.com/p/wmii/">wmii</a>, and now I'm trying
+<a href="http://awesome.naquadah.org/">Awesome</a>.</p>
+<p>I have a lot of customizations to do, but one thing that was missing was
+a way to suspend the netbook when the laptop lid is closed. I could
+manually run <code>acpitool -s</code> in a shell, or <code>pm-suspend</code>, but it's best
+handled by DBus, as intended.</p>
+<p>Now, a simple way to have DBus do the work is using <code>dbus-send</code>, like
+so:</p>
+<pre><code>dbus-send --print-reply \
+          --system \
+          --dest=org.freedesktop.UPower \
+          /org/freedesktop/UPower \
+          org.freedesktop.UPower.Suspend
+</code></pre>
+<p>The hard part is subscribing to the lid close event, so I'm not polling
+all the time, exactly what DBus was written to prevent. I had a Python
+script for this, but the API was changed in Squeeze to use the
+<a href="http://upower.freedesktop.org/">UPower</a> daemon and API.</p>
+<p>I had to do some poking around to figure out how to update it, but I
+just got it working, so I thought I'd share.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/python</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> dbus<span style="color:#f92672">,</span> gobject<span style="color:#f92672">,</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dbus.mainloop.glib <span style="color:#f92672">import</span> DBusGMainLoop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pow_prop_iface <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>pow_iface <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle_lidclose</span>(<span style="color:#f92672">*</span>args):
+</span></span><span style="display:flex;"><span>    closed <span style="color:#f92672">=</span> pow_prop_iface<span style="color:#f92672">.</span>Get(<span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#39;LidIsClosed&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> closed:
+</span></span><span style="display:flex;"><span>        print <span style="color:#e6db74">&#34;lid is closed, suspending&#34;</span>
+</span></span><span style="display:flex;"><span>        pow_iface<span style="color:#f92672">.</span>Suspend()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print <span style="color:#e6db74">&#34;lid is open&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> pow_prop_iface, pow_iface
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    DBusGMainLoop(set_as_default<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    bus <span style="color:#f92672">=</span> dbus<span style="color:#f92672">.</span>SystemBus()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    power_proxy <span style="color:#f92672">=</span> bus<span style="color:#f92672">.</span>get_object(<span style="color:#e6db74">&#39;org.freedesktop.UPower&#39;</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#39;/org/freedesktop/UPower&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pow_prop_iface <span style="color:#f92672">=</span> dbus<span style="color:#f92672">.</span>Interface(power_proxy,
+</span></span><span style="display:flex;"><span>                                    <span style="color:#e6db74">&#39;org.freedesktop.DBus.Properties&#39;</span>)
+</span></span><span style="display:flex;"><span>    pow_iface <span style="color:#f92672">=</span> dbus<span style="color:#f92672">.</span>Interface(power_proxy,
+</span></span><span style="display:flex;"><span>                               <span style="color:#e6db74">&#39;org.freedesktop.UPower&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#34;Registering a signal receiver for upower events...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    bus<span style="color:#f92672">.</span>add_signal_receiver(handle_lidclose,
+</span></span><span style="display:flex;"><span>                            dbus_interface<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;org.freedesktop.UPower&#34;</span>,
+</span></span><span style="display:flex;"><span>                            signal_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Changed&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    loop <span style="color:#f92672">=</span> gobject<span style="color:#f92672">.</span>MainLoop()
+</span></span><span style="display:flex;"><span>    loop<span style="color:#f92672">.</span>run()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><p>Now I just run it in the background from my [.xsession]{.title-ref}
+script at X11 login, and it's sitting there waiting for any change in
+UPower status. Works like a charm.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/my-first-post/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Welcome to Hugo</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/post8/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Post8</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Michael Soulier.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

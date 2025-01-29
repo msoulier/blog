@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Customizing Awesome - But I Digress</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="But I Digress" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">But I Digress</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Customizing Awesome</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2012-11-28T07:55:45-05:00">2012-11-28</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>As I mentioned previously, I'm currently running
+<a href="http://awesome.naquadah.org/">Awesome</a> on my netbook. While I added
+suspend on lid close, I still need to customize the crap out of it. I
+had nothing showing me my current battery status, so I searched around
+to find the appropriate <a href="http://www.lua.org/">lua</a> code, a language that
+I'm still picking up.</p>
+<p>So, I hacked my <code>$HOME/.config/awesome/rc.lua</code> and added this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#75715e">-- {{{ Battery state</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Initialize widget</span>
+</span></span><span style="display:flex;"><span>batwidget <span style="color:#f92672">=</span> widget({ type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;textbox&#34;</span> })
+</span></span><span style="display:flex;"><span>baticon <span style="color:#f92672">=</span> widget({ type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;imagebox&#34;</span> })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Register widget</span>
+</span></span><span style="display:flex;"><span>vicious.register(batwidget, vicious.widgets.bat,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> (widget, args)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> args[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">then</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            baticon.image <span style="color:#f92672">=</span> image(beautiful.widget_bat)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;span color=&#39;white&#39;&gt;&#34;</span><span style="color:#f92672">..</span> args[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">..</span> <span style="color:#e6db74">&#34;%&lt;/span&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>, <span style="color:#ae81ff">61</span>, <span style="color:#e6db74">&#34;BAT0&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- }}}</span>
+</span></span></code></pre></div><p>And then added the widget to the top of my screen. I was warned on the
+awesome mailing list (the name does confuse the english language) that I
+had to be careful where to put it, since the tasklist is greedy and will
+take all available space.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>mywibox[s].widgets <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        mylauncher,
+</span></span><span style="display:flex;"><span>        mytaglist[s],
+</span></span><span style="display:flex;"><span>        mypromptbox[s],
+</span></span><span style="display:flex;"><span>        layout <span style="color:#f92672">=</span> awful.widget.layout.horizontal.leftright
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    mylayoutbox[s],
+</span></span><span style="display:flex;"><span>    mytextclock,
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> mysystray <span style="color:#f92672">or</span> <span style="color:#66d9ef">nil</span>,
+</span></span><span style="display:flex;"><span>    baticon.image <span style="color:#f92672">and</span> separator, batwidget, baticon <span style="color:#f92672">or</span> <span style="color:#66d9ef">nil</span>,
+</span></span><span style="display:flex;"><span>    separator, mytasklist[s],
+</span></span><span style="display:flex;"><span>    layout <span style="color:#f92672">=</span> awful.widget.layout.horizontal.rightleft
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And, it works. Now I need a system load, cpu load, etc. And I should
+hack the keybindings, although I'm getting used to the default ones.
+Maybe update the default layout since I prefer maximized layout.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/parenting/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Parenting can really make you feel helpless</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/apple_support/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">The Apple Support Experience</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Michael Soulier.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

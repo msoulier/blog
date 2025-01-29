@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Post10 - But I Digress</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="But I Digress" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">But I Digress</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Post10</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2012-11-25T07:55:45-05:00">2012-11-25</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="tweeting-on-os-x">Tweeting on OS X</h1>
+<p>For some time my desktop has been an older, underpowered Linux box, so
+using services like <a href="http://www.twitter.com">Twitter</a> via the website
+has been painful, as loaded with heavy javascript that would consume my
+CPU's limited resources.</p>
+<p>So, like any <a href="http://www.python.org">Python</a> programmer would do, I
+wrote my own client. Well, lets be honest, the hard work was done by the
+<a href="https://github.com/tweepy/tweepy">tweepy</a> library, I'm just using it.
+I call it <a href="https://github.com/msoulier/twit">Twit</a>, and I've been using
+it to post for some time now, lightweight from the command-line. I also
+keep one running, polling my account for new posts, and notifying me
+when there are new posts and pulling them down.</p>
+<p>My notifications come in many forms, depending on the command-line
+options. I can just watch them show up in text in the shell, I can use
+<a href="http://freecode.com/projects/xosd">xosd</a> to display notifications on
+your X11 desktop, It can use
+<a href="http://developer-next.gnome.org/libnotify/">libnotify</a> in Gnome to
+display temporary notifications that drop down in the corner of the
+screen.</p>
+<p>As I'm now playing with an OS X desktop, libnotify isn't supported. I
+could use xosd along with
+<a href="http://xquartz.macosforge.org/trac/wiki">XQuartz</a>, but I'd prefer more
+native integration with OS X, as it does have a notification system, via
+<a href="https://developer.apple.com/library/mac/#releasenotes/Cocoa/AppKit.html">AppKit</a>.
+Python is preinstalled on OS X, and the AppKit module is included. I
+found a <a href="https://github.com/albertz/music-player/blob/master/notifications.py">great
+example</a>
+of how to use it online, which made this much, much simpler, so thanks
+there.</p>
+<p>I used it like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">notify_appkit</span>(status, options):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Thanks to
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    https://github.com/albertz/music-player/blob/master/notifications.py
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    for how to do this.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> notifCenter
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> notifCenter:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">import</span> AppKit
+</span></span><span style="display:flex;"><span>        notifCenter <span style="color:#f92672">=</span> \
+</span></span><span style="display:flex;"><span>            AppKit<span style="color:#f92672">.</span>NSUserNotificationCenter<span style="color:#f92672">.</span>defaultUserNotificationCenter()
+</span></span><span style="display:flex;"><span>        appDelegate <span style="color:#f92672">=</span> AppKit<span style="color:#f92672">.</span>NSApplication<span style="color:#f92672">.</span>sharedApplication()<span style="color:#f92672">.</span>delegate()
+</span></span><span style="display:flex;"><span>        notifCenter<span style="color:#f92672">.</span>setDelegate_(appDelegate)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    notif <span style="color:#f92672">=</span> AppKit<span style="color:#f92672">.</span>NSUserNotification<span style="color:#f92672">.</span>alloc()<span style="color:#f92672">.</span>init()
+</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tweet by </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> status<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>name
+</span></span><span style="display:flex;"><span>    notif<span style="color:#f92672">.</span>setTitle_(title)
+</span></span><span style="display:flex;"><span>    notif<span style="color:#f92672">.</span>setInformativeText_(status<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span>    notifCenter<span style="color:#f92672">.</span>deliverNotification_(notif)
+</span></span></code></pre></div><p>Now, this does cause a little icon on the dock to jump up and down, so
+I'll need to look into that, and how to open the browser to twitter or
+the embedded link when the notification is clicked on, but it's a good
+start.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/my-first-post/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Welcome to Hugo</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Michael Soulier.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

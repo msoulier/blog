@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Getting started with autotools - But I Digress</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="But I Digress" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">But I Digress</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Getting started with autotools</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2012-12-16T07:55:45-05:00">2012-12-16</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>So, I&rsquo;m still reading O&rsquo;Rielly&rsquo;s <a href="http://www.but-i-digress.ca/21st-century-c.html">21st Century
+C</a>. I know, too many
+books on the go and I read slowly, and not often enough. I&rsquo;m going
+through the section on <a href="http://www.gnu.org/software/autoconf/">GNU
+autotools</a>, which I&rsquo;ve never
+been a heavy user of, albiet I&rsquo;m a heavy consumer of. I just don&rsquo;t
+spend much time distributing C/C++ across platforms.</p>
+<p>I have a little C tool that I figured I&rsquo;d try it on, a small
+replacement for GNU tree that I wrote a while back, and since <code>tree</code>
+isn&rsquo;t available on OS X, it seemed a good excuse to port it. Previously
+I just had a Makefile that I maintained, and it works fine, but it&rsquo;s a
+good excuse to learn how to use autotools for the future. I do have some
+libraries, and they&rsquo;re harder to port, which is where
+<a href="http://www.gnu.org/software/libtool/">libtool</a> comes in.</p>
+<p>This <code>build</code> script outlines the process of using autotools for the
+first time. This script borrows very heavily from the book&rsquo;s author.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Creating Makefile.am&#34;</span>
+</span></span><span style="display:flex;"><span>cat &gt; Makefile.am <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">bin_PROGRAMS=twig
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">twig_SOURCES=twig.c
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Running autoscan...&#34;</span>
+</span></span><span style="display:flex;"><span>autoscan
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Creating configure.ac...&#34;</span>
+</span></span><span style="display:flex;"><span>sed -e <span style="color:#e6db74">&#39;s/FULL-PACKAGE-NAME/twig/&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;s/VERSION/1.0/&#39;</span>   <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;s|BUG-REPORT-ADDRESS|msoulier@digitaltorque.ca|&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;10i\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    AM_INIT_AUTOMAKE&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        &lt; configure.scan &gt; configure.ac
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Creating additional files...&#34;</span>
+</span></span><span style="display:flex;"><span>touch NEWS README AUTHORS ChangeLog
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Running autoreconf...&#34;</span>
+</span></span><span style="display:flex;"><span>autoreconf -iv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Running configure...&#34;</span>
+</span></span><span style="display:flex;"><span>./configure
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Running make distcheck to package sources...&#34;</span>
+</span></span><span style="display:flex;"><span>make distcheck
+</span></span></code></pre></div><p>At this point, it&rsquo;s not ready to ship, as the <code>NEWS</code>, <code>README</code>,
+<code>AUTHORS</code> and <code>ChangeLog</code> aren&rsquo;t populated yet. But it&rsquo;s close. The
+<code>configure</code> script works, and I could then build it on OS X using the
+expected.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>/usr/local
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><p>My next project to package is a shared library for work, so that will be
+more interesting. Still, if you&rsquo;re looking to use autotools for the
+first time for something simple, this should take the mystery out of
+kick-starting it. Sure, there&rsquo;s some magic like the <code>AM_INIT_AUTOMAKE</code>
+macro, and I&rsquo;ve a ton to learn yet, but this worked on the first try,
+and the resulting tarball is good to push to
+<a href="http://sourceforge.net/">SourceForge</a> or elsewhere if you want to.</p>
+<p>As I pick up more, I&rsquo;ll try to share it. I don&rsquo;t find autotools
+intuitive at all, but with some simple recipes I think I&rsquo;ll survive.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/homebrew/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Brewing a better UNIX</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/oauth/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Understanding OAuth</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Michael Soulier.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
