@@ -6,14 +6,14 @@
     <description>Recent content in Posts on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
-    <lastBuildDate>Wed, 29 Jan 2025 07:41:47 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2025 16:26:40 -0500</lastBuildDate>
     <atom:link href="https://but-i-digress.ca/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Hugo</title>
-      <link>https://but-i-digress.ca/post/new_blog/</link>
-      <pubDate>Wed, 29 Jan 2025 07:41:47 -0500</pubDate>
-      <guid>https://but-i-digress.ca/post/new_blog/</guid>
-      <description>&lt;p&gt;So previously I was using &lt;a href=&#34;https://getpelican.com/&#34;&gt;Pelican&lt;/a&gt; which is still a solid option for me, but since Hugo is so popular I thought that I would take a look at it. That, and a workflow publishing from &lt;a href=&#34;https://orgmode.org/&#34;&gt;Org mode&lt;/a&gt;, which is no longer just an Emacs thing, not that I care.&lt;/p&gt;&#xA;&lt;p&gt;Happy with what I see so far. Stay tuned.&lt;/p&gt;</description>
+      <link>https://but-i-digress.ca/post/welcome-to-hugo/</link>
+      <pubDate>Thu, 30 Jan 2025 00:00:00 -0500</pubDate>
+      <guid>https://but-i-digress.ca/post/welcome-to-hugo/</guid>
+      <description>&lt;p&gt;So previously I was using &lt;a href=&#34;https://getpelican.com/&#34;&gt;Pelican&lt;/a&gt; which is still a solid option for me, but since Hugo is so popular I thought that I would take a look at it. That, and a workflow publish from &lt;a href=&#34;https://orgmode.org/&#34;&gt;Org mode&lt;/a&gt;, which is now available with support in Emacs, NeoVim, and even some in VSCode.&lt;/p&gt;&#xA;&lt;p&gt;Happy with what I see so far. Stay tuned.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
