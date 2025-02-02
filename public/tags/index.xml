@@ -6,12 +6,19 @@
     <description>Recent content in Tags on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
-    <lastBuildDate>Sun, 02 Feb 2025 12:15:34 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2025 15:50:19 -0500</lastBuildDate>
     <atom:link href="https://but-i-digress.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blogging</title>
+      <link>https://but-i-digress.ca/tags/blogging/</link>
+      <pubDate>Sun, 02 Feb 2025 15:50:00 -0500</pubDate>
+      <guid>https://but-i-digress.ca/tags/blogging/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Hugo</title>
       <link>https://but-i-digress.ca/tags/hugo/</link>
-      <pubDate>Thu, 30 Jan 2025 00:00:00 -0500</pubDate>
+      <pubDate>Sun, 02 Feb 2025 15:50:00 -0500</pubDate>
       <guid>https://but-i-digress.ca/tags/hugo/</guid>
       <description></description>
     </item>

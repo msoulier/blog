@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Blogging with org-mode - But I Digress</title>
@@ -15,6 +15,7 @@
 	
 
 	<link rel="shortcut icon" href="/favicon.ico">
+		
 		
 </head>
 <body class="body">
@@ -39,7 +40,7 @@
 		<li class="menu__item">
 			<a class="menu__link" href="/pages/my-resume/">
 				
-				<span class="menu__text">Todo Michael P. Soulier&#39;s Curriculum Vitae</span>
+				<span class="menu__text">Michael Soulier&#39;s CV</span>
 				
 			</a>
 		</li>
@@ -57,11 +58,32 @@
 			<h1 class="post__title">Blogging with org-mode</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-02-02T12:02:51-05:00">2025-02-02</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-02-02T15:50:00-05:00">2025-02-02</time>
+	<time class="meta__text" datetime="2025-02-02T15:50:19-05:00">(Last Modified: 2025-02-02)</time></div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<p>So, as I haven&rsquo;t used that <strong>other</strong> editor in many, many years, with all of the hype around <a href="https://www.spacemacs.org/">Spacemacs</a>, <a href="https://github.com/doomemacs">Doom Emacs</a>, etc., I thought that I would take another look. Granted, Vim has been forked as NeoVim, with fun packages to compete like NVChad, but there has always been something about Emacs that intriged me, and horrified me at the same time.</p>
-<p>The joke was always that Emacs was a wonderful operating system, it just needed a decent editor. Well, if that is a reference to Vi keybindings then evil-mode works pretty damn well, at least as good as the vim extension for VSCode.</p>
+			<p>So, as I haven&rsquo;t used that <strong>other</strong> editor in many, many years, with all of the hype around <a href="https://www.spacemacs.org/">Spacemacs</a>, <a href="https://github.com/doomemacs">Doom Emacs</a>, etc., I thought that I would take another look. Granted, <a href="http://www.vim.org">Vim</a> has been forked as <a href="https://neovim.io/">NeoVim</a>, with fun packages to compete like <a href="https://nvchad.com/">NVChad</a>, but there has always been something about <a href="https://www.gnu.org/software/emacs/">Emacs</a> that intriged me, and horrified me at the same time.</p>
+<p>The joke was always that Emacs was a wonderful operating system, it just needed a decent editor. Well, if that is a reference to Vi keybindings then <a href="https://github.com/emacs-evil/evil">evil-mode</a> works pretty damn well, at least as good as the <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">vim extension</a> for <a href="https://code.visualstudio.com/">VS Code</a>. And, using Emacs keybindings isn&rsquo;t that hard, although it is definitely a 2-handed exercise and might possibly contribute to carpal tunnel syndrome.</p>
+<p>It is heavyweight compared to Vim and NeoVim, and my experimental build that includes support for <a href="https://akrl.sdf.org/gccemacs.html">libgccjit native compilation</a> did nearly melt my poor Dell Latitude 5400 work laptop, but in fairness, running Intellisense in VSCode on a large C++ codebase nearly did the same thing.</p>
+<p>So, while I&rsquo;ve pretty happy with my Vim, NeoVim and VS Code setups for writing code, my organizational tools were lacking. I did play with <a href="https://taskwarrior.org/">Taskwarrior</a> for a while, and I really liked the 2.0 simple backend and taskd sync server in a docker container, but they&rsquo;ve dropped all of that in 3.0 in favour of an SQLite backend and no taskd. I was taking notes using <a href="https://vimwiki.github.io/">VimWiki</a> and it&rsquo;s great. Combine that with the <a href="https://github.com/jamessan/vim-gnupg">Vim GnuPG plugin</a> and it was near perfect. Plus <a href="https://git-scm.com/">Git</a> of course for version control and sync. But I kept running across articles on <a href="https://orgmode.org/">Org Mode</a>, and I was curious. So I decided to dust off my ancient Emacs config, update it, and take a solid look at org-mode.</p>
+<p>It&rsquo;s still text based, so the whole thing is in Git. Love it. There&rsquo;s a NeoVim plugin for it which took very little to get working, so if I can&rsquo;t stand Emacs anymore, I&rsquo;m not locked-in. There&rsquo;s even a VS Code plugin for it, but I think it has a way to go to keep up with the Emacs version. Being purely text, it&rsquo;s mostly future-proofed already. There are modes to handle GnuPG encryption of files, which is a great enhancement on my directory full of those that I finally started managing with <a href="https://www.passwordstore.org/">pass</a>, which is awesome BTW. Editor support for PGP is amazing for an encrypted journal, or notes full of work passwords, etc.</p>
+<p>The editor becomes the interface to the org-mode files, hiding what needs to be hidden, rendering plain text as if it were a more sophisticated productivity tool, and well, it is. Even if many don&rsquo;t recognize it as such. It&rsquo;s fairly impressive, and I&rsquo;m still not locked in. If I ever want to take my entire system back to say, Vimwiki with the files in <a href="https://www.markdownguide.org/">Markdown</a> format, well, the document swiss-army knife, <a href="https://pandoc.org/">Pandoc</a>, can handle that. Not to mention there&rsquo;s a <a href="https://orgparse.readthedocs.io/en/latest/">Python module</a> that can read org, and a <a href="https://github.com/niklasfasching/go-org">Go module</a>, so conversion would not be that difficult.</p>
+<p>This blog is done with <a href="https://gohugo.io/">Hugo</a>, so the content is all Markdown. The cool thing is that you can build the blog <a href="https://andreyor.st/posts/2022-10-16-my-blogging-setup-with-emacs-and-org-mode/">with org-mode</a> where all of the posts are in a single file. So far I am really liking it too. I could repeat what others have already said so well, but what&rsquo;s the point? The details are all linked from here, so if you really want to know, follow them and read up.</p>
+<p>Oh, one last thing. Emacs in Debian 12 (<a href="https://www.debian.org/releases/bookworm/">Bookworm</a>), is not up to the latest, which at this time is 29.4. So I grabbed the code from the <a href="https://github.com/emacs-mirror/emacs.git">Github mirror</a>, installed a few packages to build against, and built it to install in my home directory like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install texinfo libgccjit-12-dev libgtk-4-dev libxaw7-dev libgnutls28-dev libgif-dev ripgrep
+</span></span><span style="display:flex;"><span>git clone https://github.com/emacs-mirror/emacs.git
+</span></span><span style="display:flex;"><span>cd emacs
+</span></span><span style="display:flex;"><span>autoreconf -vi
+</span></span><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>$HOME/emacs
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><p>So if I want to get rid of it I just blow away that emacs directory. And I put it into my path of course.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Custom emacs build</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -d $HOME/emacs <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/emacs/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>I&rsquo;m still learning about Emacs packaging of plugins but I&rsquo;ll write about that later. So far I&rsquo;m quite happy with this setup, but I have a long way to go to make it comfortable. I&rsquo;ll add more on this topic as I learn more.</p>
+<p>Cheers.</p>
 
 		</div>
 		<footer class="post__footer">
@@ -81,19 +103,8 @@
 	</article>
 </main>
 
-<div class="authorbox clearfix">
-	<p class="authorbox__warning">
-		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
-	</p>
-</div>
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/posts/buy-a-vowel/" rel="prev">
-			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Would you like to buy a vowel?</p>
-		</a>
-	</div>
 	<div class="pager__item pager__item--next">
 		<a class="pager__link" href="/posts/welcome-to-hugo/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>

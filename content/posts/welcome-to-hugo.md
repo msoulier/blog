@@ -1,9 +1,9 @@
 +++
 title = "Welcome to Hugo"
-author = ["Michael P. Soulier"]
+author = ["Michael Soulier"]
 date = 2025-01-30T16:25:00-05:00
 publishDate = 2025-01-30T00:00:00-05:00
-lastmod = 2025-02-02T12:15:34-05:00
+lastmod = 2025-02-02T15:50:19-05:00
 tags = ["hugo"]
 draft = false
 weight = 2001

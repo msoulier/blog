@@ -1,7 +1,7 @@
 +++
 title = "Would you like to buy a vowel?"
-author = ["Michael P. Soulier"]
-lastmod = 2025-02-02T12:15:34-05:00
+author = ["Michael Soulier"]
+lastmod = 2025-02-02T15:50:19-05:00
 tags = ["marketing"]
 draft = true
 weight = 2003
