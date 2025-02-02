@@ -13,4 +13,4 @@ serve:
 	hugo serve -D --watch
 
 push:
-	rsync -vaz public/ nick:/var/www/html
+	rsync -vaz public/ nick:/var/www/but-i-digress

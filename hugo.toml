@@ -22,11 +22,11 @@ opengraph = false # Enable OpenGraph if true
 schema = false # Enable Schema
 twitter_cards = false # Enable Twitter Cards if true
 readmore = false # Show "Read more" button in list if true
-authorbox = true # Show authorbox at bottom of pages if true
+authorbox = false # Show authorbox at bottom of pages if true
 toc = true # Enable Table of Contents
 pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
 post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
-mainSections = ["post", "blog"] # Specify section pages to show on home page and the "Recent articles" widget
+mainSections = ["pages", "posts"] # Specify section pages to show on home page and the "Recent articles" widget
 dateformat = "2006-01-02" # Change the format of dates
 mathjax = false # Enable MathJax
 mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
@@ -50,7 +50,7 @@ fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono
 #subtitle = "Just another site" # Logo subtitle
 
 [Params.thumbnail]
-visibility = ["list", "post"] # Control thumbnail visibility
+visibility = ["list", "posts"] # Control thumbnail visibility
 
 [Params.sidebar]
 home = "right" # Configure layout for home page

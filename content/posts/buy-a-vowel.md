@@ -1,0 +1,16 @@
++++
+title = "Would you like to buy a vowel?"
+author = ["Michael P. Soulier"]
+lastmod = 2025-02-02T12:15:34-05:00
+tags = ["marketing"]
+draft = true
+weight = 2003
++++
+
+I don't get Marketing, I really don't. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?
+
+"Imagine it. WndRvr" I mean, how did they even say it?
+
+They're likely paid better than me, but I just don't get it.
+
+{{< figure src="/ox-hugo/wndrvr.jpg" alt="logo/wndrvr image" title="Logo" >}}
