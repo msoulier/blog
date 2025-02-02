@@ -1,0 +1,103 @@
+title: But I Digress
+baseURL: https://but-i-digress.ca/
+languageCode: en-ca
+theme: Mainroad
+contentDir: content
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 1
+
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: 2
+
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 3
+
+permalinks:
+  page: /:slug/
+
+services:
+  disqus:
+    shortname: ""
+  googleAnalytics:
+    ID: ""
+
+params:
+  description: Random neuron firings, heedless of the repercussions
+  copyright: Michael Soulier
+  opengraph: false
+  schema: false
+  twitter_cards: false
+  readmore: false
+  authorbox: false
+  toc: false
+  pager: true
+  post_meta:
+    - author
+    - date
+    - categories
+    - translations
+  mainSections:
+    - pages
+    - posts
+  dateformat: "2006-01-02"
+  googleFontsLink: https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700
+  customCSS: []
+  customJS: []
+
+  style:
+    vars:
+      highlightColor: "#e22d30"
+      fontFamilyPrimary: "Open Sans, Helvetica, Arial, sans-serif"
+      fontFamilySecondary: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+
+  logo:
+    # image: "img/placeholder.png"  # Logo image. Path relative to "static"
+    # title: "Mainroad"  # Logo title, otherwise will use site title
+    # subtitle: "Just another site"  # Logo subtitle
+
+  thumbnail:
+    visibility:
+      - list
+      - posts
+
+  sidebar:
+    home: right
+    list: left
+    single: false
+
+    widgets:
+      - search
+      - recent
+      - categories
+      - taglist
+      - social
+      - languages
+    
+    recent_num: 5
+    categories_counter: false
+    tags_counter: false
+
+    social:
+      cached: false  # Activate cache if true
+      twitter: msoulier
+      mastodon: msoulier
+      linkedin: msoulier
+      github: msoulier
+      email: msoulier@digitaltorque.ca
+
+    search:
+      cached: false  # Activate cache if true
+      url: https://google.com/search
+      input:
+        name: sitesearch
+        pre: ""
+

@@ -1,9 +1,10 @@
 +++
 title = "Would you like to buy a vowel?"
 author = ["Michael Soulier"]
-lastmod = 2025-02-02T15:50:19-05:00
+date = 2025-02-02T17:36:00-05:00
+lastmod = 2025-02-02T17:37:05-05:00
 tags = ["marketing"]
-draft = true
+draft = false
 weight = 2003
 +++
 
@@ -14,3 +15,5 @@ I don't get Marketing, I really don't. Someone actually got paid to do this, and
 They're likely paid better than me, but I just don't get it.
 
 {{< figure src="/ox-hugo/wndrvr.jpg" alt="logo/wndrvr image" title="Logo" >}}
+
+Then again, the branding of many companies is a little odd, including the one that I work for, so I'll shut up now.
