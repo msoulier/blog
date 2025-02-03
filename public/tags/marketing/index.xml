@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marketing on But I Digress</title>
-    <link>https://but-i-digress.ca/tags/marketing/</link>
+    <link>http://localhost:1313/tags/marketing/</link>
     <description>Recent content in Marketing on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
-    <lastBuildDate>Sun, 02 Feb 2025 17:37:05 -0500</lastBuildDate>
-    <atom:link href="https://but-i-digress.ca/tags/marketing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Feb 2025 06:33:41 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/marketing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Would you like to buy a vowel?</title>
-      <link>https://but-i-digress.ca/posts/buy-a-vowel/</link>
+      <link>http://localhost:1313/posts/buy-a-vowel/</link>
       <pubDate>Sun, 02 Feb 2025 17:36:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/buy-a-vowel/</guid>
-      <description>&lt;p&gt;I don&amp;rsquo;t get Marketing, I really don&amp;rsquo;t. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Imagine it. WndRvr&amp;rdquo; I mean, how did they even say it?&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re likely paid better than me, but I just don&amp;rsquo;t get it.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;https://but-i-digress.ca/ox-hugo/wndrvr.jpg&#34;&#xA;    alt=&#34;logo/wndrvr image&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;h4&gt;Logo&lt;/h4&gt;&#xA;    &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Then again, the branding of many companies is a little odd, including the one that I work for, so I&amp;rsquo;ll shut up now.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/buy-a-vowel/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t get Marketing, I really don&amp;rsquo;t. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Imagine it. WndRvr&amp;rdquo; I mean, how did they even say it?&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re likely paid better than me, but I just don&amp;rsquo;t get it.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/ox-hugo/wndrvr.jpg&#34;&#xA;    alt=&#34;logo/wndrvr image&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;h4&gt;Logo&lt;/h4&gt;&#xA;    &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Then again, the branding of many companies is a little odd, including the one that I work for, so I&amp;rsquo;ll shut up now.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

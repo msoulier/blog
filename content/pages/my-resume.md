@@ -2,7 +2,7 @@
 title = "Michael Soulier's CV"
 author = ["Michael Soulier"]
 date = 2025-02-02T12:12:00-05:00
-lastmod = 2025-02-02T17:37:04-05:00
+lastmod = 2025-02-03T06:39:15-05:00
 draft = false
 weight = 2001
 noauthor = true

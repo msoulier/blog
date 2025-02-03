@@ -2,53 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>But I Digress</title>
-    <link>https://but-i-digress.ca/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
-    <lastBuildDate>Sun, 02 Feb 2025 17:37:05 -0500</lastBuildDate>
-    <atom:link href="https://but-i-digress.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Feb 2025 06:39:16 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Michael Soulier&#39;s CV</title>
-      <link>https://but-i-digress.ca/pages/my-resume/</link>
+      <link>http://localhost:1313/pages/my-resume/</link>
       <pubDate>Sun, 02 Feb 2025 12:12:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/pages/my-resume/</guid>
+      <guid>http://localhost:1313/pages/my-resume/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;I am a professional software developer, who has been in the industry of&#xA;software development for over twenty years, starting with&#xA;&lt;a href=&#34;http://www.nortel.com&#34;&gt;Nortel&lt;/a&gt; as my first job out of University, and&#xA;eventually moving to &lt;a href=&#34;http://www.mitel.com&#34;&gt;Mitel&lt;/a&gt;, working on&#xA;developing and porting VoIP applications on the Linux platform. I&#xA;specialize in Unix systems programming and Web applications, primarily,&#xA;but I have dabbled in many things and I learn quickly.&lt;/p&gt;&#xA;&lt;p&gt;I believe in developing applications in such a manner that the company&#xA;that I work for maintains their right to choice of tools and platforms&#xA;in the future. My choice of tools such as Perl, Python, Ruby and Go&#xA;demonstrate that portability and lack of &amp;ldquo;lock-in&amp;rdquo;, although I have&#xA;happily developed in C/C++ and maintained the same values.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Welcome to Hugo</title>
-      <link>https://but-i-digress.ca/posts/welcome-to-hugo/</link>
+      <link>http://localhost:1313/posts/welcome-to-hugo/</link>
       <pubDate>Thu, 30 Jan 2025 00:00:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/welcome-to-hugo/</guid>
+      <guid>http://localhost:1313/posts/welcome-to-hugo/</guid>
       <description>&lt;p&gt;So previously I was using &lt;a href=&#34;https://getpelican.com/&#34;&gt;Pelican&lt;/a&gt; which is still a solid option for me, but since Hugo is so popular I thought that I would take a look at it. That, and a workflow publish from &lt;a href=&#34;https://orgmode.org/&#34;&gt;Org mode&lt;/a&gt;, which is now available with support in Emacs, NeoVim, and even some in VSCode.&lt;/p&gt;&#xA;&lt;p&gt;Happy with what I see so far. Stay tuned.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://but-i-digress.ca/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sun, 02 Feb 2025 17:33:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;About? You&amp;rsquo;re wondering what this blog is about? It&amp;rsquo;s about my completely random rantings. Which is kind of about&amp;hellip;nothing really.&lt;/p&gt;&#xA;&lt;p&gt;If you want to read a blog that&amp;rsquo;s about something, check &lt;a href=&#34;http://www.mikeneedsakidney.ca&#34;&gt;this one&lt;/a&gt; out. Just between you and me, that guy needs help.&lt;/p&gt;&#xA;&lt;p&gt;Maybe in time I&amp;rsquo;ll figure out what this blog is really about. Mostly tech, and things that bother me, so it&amp;rsquo;s theraputic for me. Thanks for giving me a forum.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Blogging with org-mode</title>
-      <link>https://but-i-digress.ca/posts/writing-blog-in-org-mode/</link>
+      <link>http://localhost:1313/posts/writing-blog-in-org-mode/</link>
       <pubDate>Sun, 02 Feb 2025 15:50:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/writing-blog-in-org-mode/</guid>
+      <guid>http://localhost:1313/posts/writing-blog-in-org-mode/</guid>
       <description>&lt;p&gt;So, as I haven&amp;rsquo;t used that &lt;strong&gt;other&lt;/strong&gt; editor in many, many years, with all of the hype around &lt;a href=&#34;https://www.spacemacs.org/&#34;&gt;Spacemacs&lt;/a&gt;, &lt;a href=&#34;https://github.com/doomemacs&#34;&gt;Doom Emacs&lt;/a&gt;, etc., I thought that I would take another look. Granted, &lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt; has been forked as &lt;a href=&#34;https://neovim.io/&#34;&gt;NeoVim&lt;/a&gt;, with fun packages to compete like &lt;a href=&#34;https://nvchad.com/&#34;&gt;NVChad&lt;/a&gt;, but there has always been something about &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; that intriged me, and horrified me at the same time.&lt;/p&gt;&#xA;&lt;p&gt;The joke was always that Emacs was a wonderful operating system, it just needed a decent editor. Well, if that is a reference to Vi keybindings then &lt;a href=&#34;https://github.com/emacs-evil/evil&#34;&gt;evil-mode&lt;/a&gt; works pretty damn well, at least as good as the &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=vscodevim.vim&#34;&gt;vim extension&lt;/a&gt; for &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VS Code&lt;/a&gt;. And, using Emacs keybindings isn&amp;rsquo;t that hard, although it is definitely a 2-handed exercise and might possibly contribute to carpal tunnel syndrome.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Would you like to buy a vowel?</title>
-      <link>https://but-i-digress.ca/posts/buy-a-vowel/</link>
+      <link>http://localhost:1313/posts/buy-a-vowel/</link>
       <pubDate>Sun, 02 Feb 2025 17:36:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/buy-a-vowel/</guid>
-      <description>&lt;p&gt;I don&amp;rsquo;t get Marketing, I really don&amp;rsquo;t. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Imagine it. WndRvr&amp;rdquo; I mean, how did they even say it?&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re likely paid better than me, but I just don&amp;rsquo;t get it.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;https://but-i-digress.ca/ox-hugo/wndrvr.jpg&#34;&#xA;    alt=&#34;logo/wndrvr image&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;h4&gt;Logo&lt;/h4&gt;&#xA;    &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Then again, the branding of many companies is a little odd, including the one that I work for, so I&amp;rsquo;ll shut up now.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/buy-a-vowel/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t get Marketing, I really don&amp;rsquo;t. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Imagine it. WndRvr&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;I mean, how did they even say it? Try it, right now, just to yourself.&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re likely paid better than me, but I just don&amp;rsquo;t get it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>https://but-i-digress.ca/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Sun, 02 Feb 2025 17:27:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/contact/</guid>
+      <guid>http://localhost:1313/contact/</guid>
       <description>&lt;p&gt;You want to contact me? Well, I can&amp;rsquo;t imagine why, but ok. If you&amp;rsquo;re sure, my&#xA;email address is &lt;a href=&#34;mailto:msoulier@digitaltorque.ca&#34;&gt;msoulier@digitaltorque.ca&lt;/a&gt;. Be nice, I&amp;rsquo;m a fragile soul. ;-)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kingston Crosswalk</title>
+      <link>http://localhost:1313/posts/kingston-crosswalk/</link>
+      <pubDate>Mon, 03 Feb 2025 06:33:00 -0500</pubDate>
+      <guid>http://localhost:1313/posts/kingston-crosswalk/</guid>
+      <description>&lt;p&gt;In the summer of 2022 I took my lovely wife Maria to the exotic town of Kingston, Ontario for a weekend. The weather was beautiful, the AirBnB we stayed in was very nice, and overall we had a nice weekend, beyond my terrible overall lack of planning.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;You have to plan more than just the destination and accomodations, Michael.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Still, Kingston had an oddity that did stand out, when we walked down towards the water.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

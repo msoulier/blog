@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Funny on But I Digress</title>
+    <link>http://localhost:1313/tags/funny/</link>
+    <description>Recent content in Funny on But I Digress</description>
+    <generator>Hugo</generator>
+    <language>en-ca</language>
+    <lastBuildDate>Mon, 03 Feb 2025 06:33:41 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/funny/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kingston Crosswalk</title>
+      <link>http://localhost:1313/posts/kingston-crosswalk/</link>
+      <pubDate>Mon, 03 Feb 2025 06:33:00 -0500</pubDate>
+      <guid>http://localhost:1313/posts/kingston-crosswalk/</guid>
+      <description>&lt;p&gt;In the summer of 2022 I took my lovely wife Maria to the exotic town of Kingston, Ontario for a weekend. The weather was beautiful, the AirBnB we stayed in was very nice, and overall we had a nice weekend, beyond my terrible overall lack of planning.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;You have to plan more than just the destination and accomodations, Michael.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Still, Kingston had an oddity that did stand out, when we walked down towards the water.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

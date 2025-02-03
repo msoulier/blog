@@ -2,32 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on But I Digress</title>
-    <link>https://but-i-digress.ca/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
-    <lastBuildDate>Sun, 02 Feb 2025 17:37:05 -0500</lastBuildDate>
-    <atom:link href="https://but-i-digress.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Feb 2025 06:33:41 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Hugo</title>
-      <link>https://but-i-digress.ca/posts/welcome-to-hugo/</link>
+      <link>http://localhost:1313/posts/welcome-to-hugo/</link>
       <pubDate>Thu, 30 Jan 2025 00:00:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/welcome-to-hugo/</guid>
+      <guid>http://localhost:1313/posts/welcome-to-hugo/</guid>
       <description>&lt;p&gt;So previously I was using &lt;a href=&#34;https://getpelican.com/&#34;&gt;Pelican&lt;/a&gt; which is still a solid option for me, but since Hugo is so popular I thought that I would take a look at it. That, and a workflow publish from &lt;a href=&#34;https://orgmode.org/&#34;&gt;Org mode&lt;/a&gt;, which is now available with support in Emacs, NeoVim, and even some in VSCode.&lt;/p&gt;&#xA;&lt;p&gt;Happy with what I see so far. Stay tuned.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Blogging with org-mode</title>
-      <link>https://but-i-digress.ca/posts/writing-blog-in-org-mode/</link>
+      <link>http://localhost:1313/posts/writing-blog-in-org-mode/</link>
       <pubDate>Sun, 02 Feb 2025 15:50:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/writing-blog-in-org-mode/</guid>
+      <guid>http://localhost:1313/posts/writing-blog-in-org-mode/</guid>
       <description>&lt;p&gt;So, as I haven&amp;rsquo;t used that &lt;strong&gt;other&lt;/strong&gt; editor in many, many years, with all of the hype around &lt;a href=&#34;https://www.spacemacs.org/&#34;&gt;Spacemacs&lt;/a&gt;, &lt;a href=&#34;https://github.com/doomemacs&#34;&gt;Doom Emacs&lt;/a&gt;, etc., I thought that I would take another look. Granted, &lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt; has been forked as &lt;a href=&#34;https://neovim.io/&#34;&gt;NeoVim&lt;/a&gt;, with fun packages to compete like &lt;a href=&#34;https://nvchad.com/&#34;&gt;NVChad&lt;/a&gt;, but there has always been something about &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; that intriged me, and horrified me at the same time.&lt;/p&gt;&#xA;&lt;p&gt;The joke was always that Emacs was a wonderful operating system, it just needed a decent editor. Well, if that is a reference to Vi keybindings then &lt;a href=&#34;https://github.com/emacs-evil/evil&#34;&gt;evil-mode&lt;/a&gt; works pretty damn well, at least as good as the &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=vscodevim.vim&#34;&gt;vim extension&lt;/a&gt; for &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VS Code&lt;/a&gt;. And, using Emacs keybindings isn&amp;rsquo;t that hard, although it is definitely a 2-handed exercise and might possibly contribute to carpal tunnel syndrome.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Would you like to buy a vowel?</title>
-      <link>https://but-i-digress.ca/posts/buy-a-vowel/</link>
+      <link>http://localhost:1313/posts/buy-a-vowel/</link>
       <pubDate>Sun, 02 Feb 2025 17:36:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/buy-a-vowel/</guid>
-      <description>&lt;p&gt;I don&amp;rsquo;t get Marketing, I really don&amp;rsquo;t. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Imagine it. WndRvr&amp;rdquo; I mean, how did they even say it?&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re likely paid better than me, but I just don&amp;rsquo;t get it.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;https://but-i-digress.ca/ox-hugo/wndrvr.jpg&#34;&#xA;    alt=&#34;logo/wndrvr image&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;h4&gt;Logo&lt;/h4&gt;&#xA;    &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Then again, the branding of many companies is a little odd, including the one that I work for, so I&amp;rsquo;ll shut up now.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/buy-a-vowel/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t get Marketing, I really don&amp;rsquo;t. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Imagine it. WndRvr&amp;rdquo; I mean, how did they even say it?&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re likely paid better than me, but I just don&amp;rsquo;t get it.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/ox-hugo/wndrvr.jpg&#34;&#xA;    alt=&#34;logo/wndrvr image&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;h4&gt;Logo&lt;/h4&gt;&#xA;    &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Then again, the branding of many companies is a little odd, including the one that I work for, so I&amp;rsquo;ll shut up now.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kingston Crosswalk</title>
+      <link>http://localhost:1313/posts/kingston-crosswalk/</link>
+      <pubDate>Mon, 03 Feb 2025 06:33:00 -0500</pubDate>
+      <guid>http://localhost:1313/posts/kingston-crosswalk/</guid>
+      <description>&lt;p&gt;In the summer of 2022 I took my lovely wife Maria to the exotic town of Kingston, Ontario for a weekend. The weather was beautiful, the AirBnB we stayed in was very nice, and overall we had a nice weekend, beyond my terrible overall lack of planning.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;You have to plan more than just the destination and accomodations, Michael.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Still, Kingston had an oddity that did stand out, when we walked down towards the water.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

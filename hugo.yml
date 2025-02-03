@@ -3,6 +3,8 @@ baseURL: https://but-i-digress.ca/
 languageCode: en-ca
 theme: Mainroad
 contentDir: content
+ignoreLogs:
+  - warning-goldmark-raw-html
 
 menu:
   main:
