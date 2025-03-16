@@ -1,9 +1,9 @@
-.PHONY = help build serve push
+.PHONY: help build serve push
 
 help:
 	@echo "Targets:"
-	@echo "    build"
 	@echo "    serve"
+	@echo "    build"
 	@echo "    push"
 
 build:
@@ -12,5 +12,5 @@ build:
 serve:
 	hugo serve -D --watch
 
-push:
+push: build
 	rsync -vaz public/ nick:/var/www/but-i-digress
