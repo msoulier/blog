@@ -2,7 +2,9 @@
 title = "Contact"
 author = ["Michael Soulier"]
 date = 2025-02-02T17:27:00-05:00
-lastmod = 2025-02-03T06:39:16-05:00
+lastmod = 2025-03-17T14:17:25-04:00
+tags = ["blog"]
+categories = ["fun"]
 draft = false
 weight = 2003
 noauthor = true

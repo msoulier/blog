@@ -2,8 +2,9 @@
 title = "Would you like to buy a vowel?"
 author = ["Michael Soulier"]
 date = 2025-02-02T17:36:00-05:00
-lastmod = 2025-02-03T06:39:16-05:00
-tags = ["marketing"]
+lastmod = 2025-03-17T14:17:25-04:00
+tags = ["blog", "marketing"]
+categories = ["fun"]
 draft = false
 weight = 2003
 +++

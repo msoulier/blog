@@ -2,7 +2,9 @@
 title = "Michael Soulier's CV"
 author = ["Michael Soulier"]
 date = 2025-02-02T12:12:00-05:00
-lastmod = 2025-02-03T06:39:15-05:00
+lastmod = 2025-03-17T14:17:25-04:00
+tags = ["blog"]
+categories = ["fun"]
 draft = false
 weight = 2001
 noauthor = true
@@ -46,7 +48,7 @@ My qualifications for the job are as follows. For full details on the
 material in this summary, please refer to the section entitled
 Experience, and the sections that follow it.
 
-1.  Fifteen year's experience with [Mitel](http://www.mitel.com) as a
+1.  Twenty-two year's experience with [Mitel](http://www.mitel.com) as a
     software engineer, working on the Mitel 6000 Managed Application
     Server (formerly the E-Smith server and gateway), as well as
     applications on top of that server such as the Teleworker Solution
@@ -57,7 +59,9 @@ Experience, and the sections that follow it.
     time as an internal Linux and technology consultant, helping to port
     VoIP applications to Linux from Windows and VxWorks, and giving an
     occasional internal tutorial. Most work was done in Perl, C/C++,
-    Python, Java and Ruby.
+    Python, Javascript, Go and a little Java. A few years back I spearheaded
+    breaking up MBG into micro-services to run in Kubernetes, and wrote MSL's
+    ReST interface for remote management.
 2.  Four years experience with [Nortel](http://www.nortel.com),
     designing software development tools for internal use, both web-based
     and other, as well as assisting in development of product code. Three
