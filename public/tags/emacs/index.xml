@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on But I Digress</title>
+    <link>https://but-i-digress.ca/tags/emacs/</link>
+    <description>Recent content in Emacs on But I Digress</description>
+    <generator>Hugo</generator>
+    <language>en-ca</language>
+    <lastBuildDate>Mon, 31 Mar 2025 08:34:48 -0400</lastBuildDate>
+    <atom:link href="https://but-i-digress.ca/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs woes</title>
+      <link>https://but-i-digress.ca/posts/emacs-woes/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 -0400</pubDate>
+      <guid>https://but-i-digress.ca/posts/emacs-woes/</guid>
+      <description>&lt;p&gt;So I recently got back into using &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;, primarily as a productivity tool. While it might be more at some point, my best programming weapons are still &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt; and &lt;a href=&#34;https://www.vim.org/&#34;&gt;Vim&lt;/a&gt;, sometimes &lt;a href=&#34;https://neovim.io/&#34;&gt;NeoVim&lt;/a&gt;, and usually in combination with &lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;TMux&lt;/a&gt; and the &lt;a href=&#34;https://github.com/christoomey/vim-tmux-navigator&#34;&gt;vim-tmux-navigator&lt;/a&gt; plugin. But I can always go into that later, or you can search for what is likely a better explanation elsewhere.&lt;/p&gt;&#xA;&lt;p&gt;Emacs, originally short for &amp;ldquo;Editor Macros&amp;rdquo;, is quite well named. People come to Emacs looking for a direct comparison between VSCode and other solutions, which is foolish, as it turns out. The best explanation I heard was that Emacs is not an editor, it is a toolkit for building the perfect editor for you. But like a lot of things, there is some assembly required.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

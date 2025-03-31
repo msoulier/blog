@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Emacs woes - But I Digress</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="But I Digress" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">But I Digress</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/posts/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/contact/">
+				
+				<span class="menu__text">Contact</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Emacs woes</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-03-31T08:07:00-04:00">2025-03-31</time>
+	<time class="meta__text" datetime="2025-03-31T08:34:48-04:00">(Last Modified: 2025-03-31)</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>So I recently got back into using <a href="https://www.gnu.org/software/emacs/">Emacs</a>, primarily as a productivity tool. While it might be more at some point, my best programming weapons are still <a href="https://code.visualstudio.com/">VSCode</a> and <a href="https://www.vim.org/">Vim</a>, sometimes <a href="https://neovim.io/">NeoVim</a>, and usually in combination with <a href="https://github.com/tmux/tmux/wiki">TMux</a> and the <a href="https://github.com/christoomey/vim-tmux-navigator">vim-tmux-navigator</a> plugin. But I can always go into that later, or you can search for what is likely a better explanation elsewhere.</p>
+<p>Emacs, originally short for &ldquo;Editor Macros&rdquo;, is quite well named. People come to Emacs looking for a direct comparison between VSCode and other solutions, which is foolish, as it turns out. The best explanation I heard was that Emacs is not an editor, it is a toolkit for building the perfect editor for you. But like a lot of things, there is some assembly required.</p>
+<p>If you don&rsquo;t want to assemble anything and want a more polished solution, thanks to the labour of others, then go look at <a href="https://www.spacemacs.org/">SpaceMacs</a> or <a href="https://github.com/doomemacs/doomemacs">Doom Emacs</a>. I have a setup for the latter and it&rsquo;s quite good, but I wanted to learn more, so I&rsquo;ve set up my own Emacs from scratch, as it were. As it happens, it was also with the help of <a href="https://systemcrafters.net/">System Crafters</a> and <a href="https://daviwil.com/">David Wilson&rsquo;s</a> excellent youtube videos.</p>
+<p>Now, not everything was completely rosy up to this point. I am currently running <a href="https://www.debian.org">Debian</a> 12 and it has Emacs 28.2. I did see a crash in that version so I looked upstream and found that they were up to Emacs 29.4 at that point, so I looked into how to build it myself, since for some odd reason, the GNU project is not releasing <a href="https://appimage.org/">AppImages</a> and prefers instead to use their own system, <a href="https://guix.gnu.org/">Guix</a>. I didn&rsquo;t feel like using that so I went to the <a href="https://github.com/emacs-mirror/emacs.git">Emacs Github mirror</a> and checked out the code. For those wanting to do that, here is my recipe:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install autoconf automake libtool texinfo libgccjit-12-dev libgtk-4-dev libxaw7-dev libgnutls28-dev libgif-dev ripgrep libncurses-dev
+</span></span><span style="display:flex;"><span>git clone https://github.com/emacs-mirror/emacs.git
+</span></span><span style="display:flex;"><span>cd emacs
+</span></span><span style="display:flex;"><span>autoreconf -vi
+</span></span><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>$HOME/emacs
+</span></span></code></pre></div><p>That said, it&rsquo;s not like guix is hard to use on Debian, so you might actually save disk space and time if you use it. I tried it in a container and it was basically `guix install emacs`, so I think they&rsquo;re doing good work on guix. Sad that it is a competing effort instead of aligning on one good solution though. The community is fragmented enough already.</p>
+<p>So, at this time I am primary using Emacs for one of its killer apps, which is <a href="https://orgmode.org/">Org Mode</a>. I am coming from <a href="https://vimwiki.github.io/">VimWiki</a>, which is awesome, but VimWiki does not include a productivity framework (mind you, install <a href="https://taskwarrior.org/">TaskWarrior</a> and <a href="https://github.com/tools-life/taskwiki">TaskWiki</a> and it gains a damn good one), and I love the fact that org-mode is all text based and also works with <a href="https://github.com/nvim-orgmode/orgmode">NeoVim</a> if you set it up. Hell, even VSCode has some support for it, and if you want to move away from it, <a href="https://pandoc.org/installing.html">Pandoc</a> can convert .org to .md to get you back to something that is VimWiki compatible. So I don&rsquo;t mind getting really into using it because I can get back out easily enough if I choose. Previously I was using TaskWarrior, but I dropped it for various reasons that I can go into another time. I am not against going back to it though, if this doesn&rsquo;t work out.</p>
+<p>And that brings me to the problems that I&rsquo;ve seen. Granted, most of my experiences have been good ones, but no one wants to hear about those. Just like slowing down to look at a car crash, you want to know what&rsquo;s gone wrong. So far, I&rsquo;ve seen two major issues, not counting my own wasted time constantly tweaking my configuration.</p>
+<pre><code>Native Compilation.
+</code></pre>
+<p>It was an experimental feature in 29.4, so I tried in my custom build, turning it on. My understanding is that while Emacs already byte-compiles elisp to bytecode, native compilation goes much further, greatly optimizing the elisp codebase. So of course I tried it.</p>
+<p>When I first started that Emacs build I heard my CPU fan go wild. But I let it go, monitoring the compile output buffer and it told me what it was doing. I went to dinner and came back. It was still going. And the compile buffer&hellip;wasn&rsquo;t. For some reason it just sat there chewing a ton of CPU doing God-knows-what. I finally told it to quit, and it did. When I started it again it started up again, so I killed that build and turned the feature off.</p>
+<p>Now in 30.1 the feature is unconditionally on. It behaved identically except when I exited and restarted, the problem went away. This does not fill me with confidence.</p>
+<pre><code>Org Mode.
+</code></pre>
+<p>This is the killer app that pulled me back into Emacs in the first place. As it is processing a lot of text files, it is understood that performance will be an issue. This is why org-roam optimizes itself with a back-end SQLite database. I like the pure text nature of org-mode, and I am willing to put up with a little performance problem while using it from time to time. But not like the problem I recently ran into.</p>
+<p>I am using a journal.org capture file to capture random journal entries, and the standard setup for this indents for year, month, day and then the journal entry itself. I am using some special characters to represent the bullets, and some faces (fonts) that increase in size the more important the bullets are. This normally is not a problem. But for a theme I was using <a href="https://github.com/protesilaos/modus-themes">modus-vivendi</a>, which is great, but I think it might have specified some faces that my system did not have, because loading my journal hung while Emacs chewed 100% cpu, and when I finally killed it and got a corefile it was in some kind of face processing code. As soon as I changed themes the problem went away, but again, this does not inspire confidence.</p>
+<p>So, mostly my experiences have been excellent. But, it&rsquo;s software. Software has bugs. The question as to whether you use a piece of software is whether the bugs are something that you can tolerate.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 0 0 0-6 3 3 0 0 0 0 6"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/emacs/" rel="tag">emacs</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/medical-questionnaire/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Medical Questionnaire</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Michael Soulier.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

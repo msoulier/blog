@@ -6,14 +6,14 @@
     <description>Recent content on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
-    <lastBuildDate>Mon, 17 Mar 2025 14:19:27 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 31 Mar 2025 08:34:48 -0400</lastBuildDate>
     <atom:link href="https://but-i-digress.ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Michael Soulier&#39;s CV</title>
       <link>https://but-i-digress.ca/pages/my-resume/</link>
       <pubDate>Sun, 02 Feb 2025 12:12:00 -0500</pubDate>
       <guid>https://but-i-digress.ca/pages/my-resume/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;I am a professional software developer, who has been in the industry of&#xA;software development for over twenty years, starting with&#xA;&lt;a href=&#34;http://www.nortel.com&#34;&gt;Nortel&lt;/a&gt; as my first job out of University, and&#xA;eventually moving to &lt;a href=&#34;http://www.mitel.com&#34;&gt;Mitel&lt;/a&gt;, working on&#xA;developing and porting VoIP applications on the Linux platform. I&#xA;specialize in Unix systems programming and Web applications, primarily,&#xA;but I have dabbled in many things and I learn quickly.&lt;/p&gt;&#xA;&lt;p&gt;I believe in developing applications in such a manner that the company&#xA;that I work for maintains their right to choice of tools and platforms&#xA;in the future. My choice of tools such as Perl, Python, Ruby and Go&#xA;demonstrate that portability and lack of &amp;ldquo;lock-in&amp;rdquo;, although I have&#xA;happily developed in C/C++ and maintained the same values.&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>Welcome to Hugo</title>
@@ -63,6 +63,13 @@
       <pubDate>Mon, 17 Mar 2025 14:12:00 -0400</pubDate>
       <guid>https://but-i-digress.ca/posts/medical-questionnaire/</guid>
       <description>&lt;p&gt;I was just at the Ottawa hospital and one of the questions on their pre-screening questionnaire was,&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Do you have Dementia?&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;My response was, &amp;ldquo;How would I know?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;Seems fair to me.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Emacs woes</title>
+      <link>https://but-i-digress.ca/posts/emacs-woes/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 -0400</pubDate>
+      <guid>https://but-i-digress.ca/posts/emacs-woes/</guid>
+      <description>&lt;p&gt;So I recently got back into using &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;, primarily as a productivity tool. While it might be more at some point, my best programming weapons are still &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt; and &lt;a href=&#34;https://www.vim.org/&#34;&gt;Vim&lt;/a&gt;, sometimes &lt;a href=&#34;https://neovim.io/&#34;&gt;NeoVim&lt;/a&gt;, and usually in combination with &lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;TMux&lt;/a&gt; and the &lt;a href=&#34;https://github.com/christoomey/vim-tmux-navigator&#34;&gt;vim-tmux-navigator&lt;/a&gt; plugin. But I can always go into that later, or you can search for what is likely a better explanation elsewhere.&lt;/p&gt;&#xA;&lt;p&gt;Emacs, originally short for &amp;ldquo;Editor Macros&amp;rdquo;, is quite well named. People come to Emacs looking for a direct comparison between VSCode and other solutions, which is foolish, as it turns out. The best explanation I heard was that Emacs is not an editor, it is a toolkit for building the perfect editor for you. But like a lot of things, there is some assembly required.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

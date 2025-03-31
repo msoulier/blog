@@ -2,7 +2,7 @@
 title = "Would you like to buy a vowel?"
 author = ["Michael Soulier"]
 date = 2025-02-02T17:36:00-05:00
-lastmod = 2025-03-17T14:19:27-04:00
+lastmod = 2025-03-31T08:34:48-04:00
 tags = ["marketing"]
 draft = false
 weight = 2003
@@ -16,6 +16,6 @@ I mean, how did they even say it? Try it, right now, just to yourself.
 
 They're likely paid better than me, but I just don't get it.
 
-{{< figure src="/ox-hugo/wndrvr.jpg" alt="logo/wndrvr image" title="Logo" >}}
+![](/ox-hugo/wndrvr.jpg)
 
 Then again, the branding of many companies is a little odd, including the one that I work for, so I'll shut up now.
