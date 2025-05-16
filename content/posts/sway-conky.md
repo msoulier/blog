@@ -4,7 +4,7 @@ author = ["Michael Soulier"]
 lastmod = 2025-05-16T11:57:51-04:00
 tags = ["linux", "sway", "wayland"]
 categories = ["fun"]
-draft = true
+draft = false
 weight = 2008
 +++
 

@@ -57,5 +57,12 @@
       <guid>https://but-i-digress.ca/posts/emacs-woes/</guid>
       <description>&lt;p&gt;So I recently got back into using &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;, primarily as a productivity tool. While it might be more at some point, my best programming weapons are still &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt; and &lt;a href=&#34;https://www.vim.org/&#34;&gt;Vim&lt;/a&gt;, sometimes &lt;a href=&#34;https://neovim.io/&#34;&gt;NeoVim&lt;/a&gt;, and usually in combination with &lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;TMux&lt;/a&gt; and the &lt;a href=&#34;https://github.com/christoomey/vim-tmux-navigator&#34;&gt;vim-tmux-navigator&lt;/a&gt; plugin. But I can always go into that later, or you can search for what is likely a better explanation elsewhere.&lt;/p&gt;&#xA;&lt;p&gt;Emacs, originally short for &amp;ldquo;Editor Macros&amp;rdquo;, is quite well named. People come to Emacs looking for a direct comparison between VSCode and other solutions, which is foolish, as it turns out. The best explanation I heard was that Emacs is not an editor, it is a toolkit for building the perfect editor for you. But like a lot of things, there is some assembly required.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Sway, using conky as bar</title>
+      <link>https://but-i-digress.ca/posts/sway-conky/</link>
+      <pubDate>Fri, 16 May 2025 11:57:51 -0400</pubDate>
+      <guid>https://but-i-digress.ca/posts/sway-conky/</guid>
+      <description>&lt;p&gt;So while it is important to know how to use Gnome on a linux desktop, the fact is that it is not my favorite desktop environment for linux. It is far too &amp;ldquo;dumbed-down&amp;rdquo; and made mostly for the masses, and I tend to be more of a &amp;ldquo;power-user&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;In the past, I became a big fan of the &lt;a href=&#34;https://i3wm.org/&#34;&gt;I3&lt;/a&gt; tiling window manager. It just fit the way that I work, and I found myself highly productive with it. But I3 was made to integrate with &lt;a href=&#34;https://www.x.org/&#34;&gt;Xorg&lt;/a&gt;, and that was beginning to show its age, so the community has been working on a more modern replacement for X, being &lt;a href=&#34;https://wayland.freedesktop.org/&#34;&gt;Wayland&lt;/a&gt;. But I3 doesn&amp;rsquo;t work with Wayland! The horror!&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
