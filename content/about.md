@@ -2,7 +2,7 @@
 title = "About"
 author = ["Michael Soulier"]
 date = 2025-02-02T17:33:00-05:00
-lastmod = 2025-03-31T08:34:47-04:00
+lastmod = 2025-05-16T09:37:44-04:00
 draft = false
 weight = 2002
 noauthor = true

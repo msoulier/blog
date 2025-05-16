@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fun on But I Digress</title>
-    <link>https://but-i-digress.ca/categories/fun/</link>
-    <description>Recent content in Fun on But I Digress</description>
+    <title>Linux on But I Digress</title>
+    <link>https://but-i-digress.ca/tags/linux/</link>
+    <description>Recent content in Linux on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
     <lastBuildDate>Fri, 16 May 2025 09:37:44 -0400</lastBuildDate>
-    <atom:link href="https://but-i-digress.ca/categories/fun/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://but-i-digress.ca/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compile a custom emacs 29.4 on Debian 12</title>
       <link>https://but-i-digress.ca/posts/build-emacs-debian/</link>

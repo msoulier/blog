@@ -2,7 +2,7 @@
 title = "Kingston Crosswalk"
 author = ["Michael Soulier"]
 date = 2025-02-03T06:33:00-05:00
-lastmod = 2025-03-31T08:34:48-04:00
+lastmod = 2025-05-16T09:37:44-04:00
 tags = ["funny"]
 draft = false
 weight = 2004
@@ -14,7 +14,7 @@ _You have to plan more than just the destination and accomodations, Michael._
 
 Still, Kingston had an oddity that did stand out, when we walked down towards the water.
 
-![](/ox-hugo/kingston_crosswalk.jpg)
+{{< figure src="/ox-hugo/kingston_crosswalk.jpg" alt="kingston crosswalk image" title="Kingston crosswalk" >}}
 
 Umm, full stop. Absolutely every single person that I have shown this to says the same thing.
 

@@ -2,9 +2,9 @@
 title = "Medical Questionnaire"
 author = ["Michael Soulier"]
 date = 2025-03-17T14:12:00-04:00
-lastmod = 2025-03-31T08:34:48-04:00
+lastmod = 2025-05-16T09:37:44-04:00
 draft = false
-weight = 2005
+weight = 2006
 +++
 
 I was just at the Ottawa hospital and one of the questions on their pre-screening questionnaire was,

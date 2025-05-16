@@ -2,7 +2,7 @@
 title = "Blogging with org-mode"
 author = ["Michael Soulier"]
 date = 2025-02-02T15:50:00-05:00
-lastmod = 2025-03-31T08:34:48-04:00
+lastmod = 2025-05-16T09:37:44-04:00
 tags = ["hugo", "blogging"]
 draft = false
 weight = 2002

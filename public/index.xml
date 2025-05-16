@@ -6,14 +6,14 @@
     <description>Recent content on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
-    <lastBuildDate>Mon, 31 Mar 2025 08:34:48 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 16 May 2025 09:37:44 -0400</lastBuildDate>
     <atom:link href="https://but-i-digress.ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Michael Soulier&#39;s CV</title>
       <link>https://but-i-digress.ca/pages/my-resume/</link>
       <pubDate>Sun, 02 Feb 2025 12:12:00 -0500</pubDate>
       <guid>https://but-i-digress.ca/pages/my-resume/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;I am a professional software developer, who has been in the industry of&#xA;software development for over twenty years, starting with&#xA;&lt;a href=&#34;http://www.nortel.com&#34;&gt;Nortel&lt;/a&gt; as my first job out of University, and&#xA;eventually moving to &lt;a href=&#34;http://www.mitel.com&#34;&gt;Mitel&lt;/a&gt;, working on&#xA;developing and porting VoIP applications on the Linux platform. I&#xA;specialize in Unix systems programming and Web applications, primarily,&#xA;but I have dabbled in many things and I learn quickly.&lt;/p&gt;&#xA;&lt;p&gt;I believe in developing applications in such a manner that the company&#xA;that I work for maintains their right to choice of tools and platforms&#xA;in the future. My choice of tools such as Perl, Python, Ruby and Go&#xA;demonstrate that portability and lack of &amp;ldquo;lock-in&amp;rdquo;, although I have&#xA;happily developed in C/C++ and maintained the same values.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Welcome to Hugo</title>
@@ -56,6 +56,13 @@
       <pubDate>Mon, 03 Feb 2025 06:33:00 -0500</pubDate>
       <guid>https://but-i-digress.ca/posts/kingston-crosswalk/</guid>
       <description>&lt;p&gt;In the summer of 2022 I took my lovely wife Maria to the exotic town of Kingston, Ontario for a weekend. The weather was beautiful, the AirBnB we stayed in was very nice, and overall we had a nice weekend, beyond my terrible overall lack of planning.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;You have to plan more than just the destination and accomodations, Michael.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Still, Kingston had an oddity that did stand out, when we walked down towards the water.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Compile a custom emacs 29.4 on Debian 12</title>
+      <link>https://but-i-digress.ca/posts/build-emacs-debian/</link>
+      <pubDate>Fri, 16 May 2025 09:33:00 -0400</pubDate>
+      <guid>https://but-i-digress.ca/posts/build-emacs-debian/</guid>
+      <description>&lt;p&gt;So, while I do love Debian, it does often show its age. It is very stable, and to remain stable it is often using older versions of software. When I decided to get back into Emacs for org-mode, I found it easier to use a more recent version than Debian provides. This turned out to be fairly simple.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/emacs-mirror/emacs.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd emacs&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install autoconf automake libtool texinfo libgccjit-12-dev libgtk-4-dev libxaw7-dev libgnutls28-dev libgif-dev ripgrep libncurses-dev makeinfo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/emacs-mirror/emacs.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd emacs&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;autoreconf -vi&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./configure --prefix&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$HOME/emacs --with-native-compilation&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make -j8&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make install&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Optionally, if you want pgtk support:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Medical Questionnaire</title>

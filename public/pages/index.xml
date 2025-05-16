@@ -6,14 +6,14 @@
     <description>Recent content in Pages on But I Digress</description>
     <generator>Hugo</generator>
     <language>en-ca</language>
-    <lastBuildDate>Mon, 31 Mar 2025 08:34:47 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 16 May 2025 09:37:44 -0400</lastBuildDate>
     <atom:link href="https://but-i-digress.ca/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Michael Soulier&#39;s CV</title>
       <link>https://but-i-digress.ca/pages/my-resume/</link>
       <pubDate>Sun, 02 Feb 2025 12:12:00 -0500</pubDate>
       <guid>https://but-i-digress.ca/pages/my-resume/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;I am a professional software developer, who has been in the industry of&#xA;software development for over twenty years, starting with&#xA;&lt;a href=&#34;http://www.nortel.com&#34;&gt;Nortel&lt;/a&gt; as my first job out of University, and&#xA;eventually moving to &lt;a href=&#34;http://www.mitel.com&#34;&gt;Mitel&lt;/a&gt;, working on&#xA;developing and porting VoIP applications on the Linux platform. I&#xA;specialize in Unix systems programming and Web applications, primarily,&#xA;but I have dabbled in many things and I learn quickly.&lt;/p&gt;&#xA;&lt;p&gt;I believe in developing applications in such a manner that the company&#xA;that I work for maintains their right to choice of tools and platforms&#xA;in the future. My choice of tools such as Perl, Python, Ruby and Go&#xA;demonstrate that portability and lack of &amp;ldquo;lock-in&amp;rdquo;, although I have&#xA;happily developed in C/C++ and maintained the same values.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -3,10 +3,10 @@ title = "Emacs woes"
 author = ["Michael Soulier"]
 date = 2025-03-31T08:07:00-04:00
 publishDate = 2025-03-22T00:00:00-04:00
-lastmod = 2025-03-31T08:34:48-04:00
+lastmod = 2025-05-16T09:37:44-04:00
 tags = ["emacs"]
 draft = false
-weight = 2006
+weight = 2007
 +++
 
 So I recently got back into using [Emacs](https://www.gnu.org/software/emacs/), primarily as a productivity tool. While it might be more at some point, my best programming weapons are still [VSCode](https://code.visualstudio.com/) and [Vim](https://www.vim.org/), sometimes [NeoVim](https://neovim.io/), and usually in combination with [TMux](https://github.com/tmux/tmux/wiki) and the [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) plugin. But I can always go into that later, or you can search for what is likely a better explanation elsewhere.
@@ -31,7 +31,7 @@ So, at this time I am primary using Emacs for one of its killer apps, which is [
 
 And that brings me to the problems that I've seen. Granted, most of my experiences have been good ones, but no one wants to hear about those. Just like slowing down to look at a car crash, you want to know what's gone wrong. So far, I've seen two major issues, not counting my own wasted time constantly tweaking my configuration.
 
-    Native Compilation.
+1.  Native Compilation.
 
 It was an experimental feature in 29.4, so I tried in my custom build, turning it on. My understanding is that while Emacs already byte-compiles elisp to bytecode, native compilation goes much further, greatly optimizing the elisp codebase. So of course I tried it.
 
@@ -39,7 +39,7 @@ When I first started that Emacs build I heard my CPU fan go wild. But I let it g
 
 Now in 30.1 the feature is unconditionally on. It behaved identically except when I exited and restarted, the problem went away. This does not fill me with confidence.
 
-    Org Mode.
+1.  Org Mode.
 
 This is the killer app that pulled me back into Emacs in the first place. As it is processing a lot of text files, it is understood that performance will be an issue. This is why org-roam optimizes itself with a back-end SQLite database. I like the pure text nature of org-mode, and I am willing to put up with a little performance problem while using it from time to time. But not like the problem I recently ran into.
 
