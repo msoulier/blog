@@ -1,7 +1,8 @@
 +++
 title = "Sway, using conky as bar"
 author = ["Michael Soulier"]
-lastmod = 2025-05-16T11:57:51-04:00
+date = 2025-05-16T15:35:00-04:00
+lastmod = 2025-05-16T16:04:40-04:00
 tags = ["linux", "sway", "wayland"]
 categories = ["fun"]
 draft = false
@@ -56,3 +57,5 @@ end
 ```
 
 From there, configure "status_command conky" in your ~/.config/sway/config file, and it just works.
+
+{{< figure src="/ox-hugo/conky_sshot.png" alt="conky screenshot image" title="conky screenshot" >}}

@@ -2,7 +2,7 @@
 title = "Kingston Crosswalk"
 author = ["Michael Soulier"]
 date = 2025-02-03T06:33:00-05:00
-lastmod = 2025-05-16T11:57:51-04:00
+lastmod = 2025-05-16T16:04:40-04:00
 tags = ["funny"]
 draft = false
 weight = 2004

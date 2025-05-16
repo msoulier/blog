@@ -2,7 +2,7 @@
 title = "Medical Questionnaire"
 author = ["Michael Soulier"]
 date = 2025-03-17T14:12:00-04:00
-lastmod = 2025-05-16T11:57:51-04:00
+lastmod = 2025-05-16T16:04:40-04:00
 tags = ["funny"]
 draft = false
 weight = 2006
