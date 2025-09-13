@@ -2,79 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://but-i-digress.ca/pages/my-resume/</loc>
+    <loc>http://127.0.0.1:8000/pages/my-resume/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/welcome-to-hugo/</loc>
+    <loc>http://127.0.0.1:8000/posts/welcome-to-hugo/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/about/</loc>
+    <loc>http://127.0.0.1:8000/about/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/writing-blog-in-org-mode/</loc>
+    <loc>http://127.0.0.1:8000/posts/writing-blog-in-org-mode/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/buy-a-vowel/</loc>
+    <loc>http://127.0.0.1:8000/posts/buy-a-vowel/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/contact/</loc>
+    <loc>http://127.0.0.1:8000/contact/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/kingston-crosswalk/</loc>
+    <loc>http://127.0.0.1:8000/posts/kingston-crosswalk/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/build-emacs-debian/</loc>
+    <loc>http://127.0.0.1:8000/posts/build-emacs-debian/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/medical-questionnaire/</loc>
+    <loc>http://127.0.0.1:8000/posts/medical-questionnaire/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/emacs-woes/</loc>
+    <loc>http://127.0.0.1:8000/posts/emacs-woes/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/sway-conky/</loc>
+    <loc>http://127.0.0.1:8000/posts/sway-conky/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/</loc>
+    <loc>http://127.0.0.1:8000/posts/go-desktop-tools/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/posts/virt-manager/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/posts/</loc>
+    <loc>http://127.0.0.1:8000/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/categories/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/categories/fun/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/tags/golang/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/tags/linux/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/posts/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/tags/python/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/tags/</loc>
+    <lastmod>2025-09-13T18:55:32-04:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:8000/tags/sway/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/categories/</loc>
+    <loc>http://127.0.0.1:8000/tags/wayland/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/categories/fun/</loc>
+    <loc>http://127.0.0.1:8000/tags/emacs/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/tags/linux/</loc>
+    <loc>http://127.0.0.1:8000/tags/funny/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/tags/sway/</loc>
+    <loc>http://127.0.0.1:8000/tags/marketing/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/tags/</loc>
+    <loc>http://127.0.0.1:8000/tags/blogging/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/tags/wayland/</loc>
+    <loc>http://127.0.0.1:8000/tags/hugo/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url><url>
-    <loc>https://but-i-digress.ca/tags/emacs/</loc>
-    <lastmod>2025-05-16T16:04:40-04:00</lastmod>
-  </url><url>
-    <loc>https://but-i-digress.ca/tags/funny/</loc>
-    <lastmod>2025-05-16T16:04:40-04:00</lastmod>
-  </url><url>
-    <loc>https://but-i-digress.ca/tags/marketing/</loc>
-    <lastmod>2025-05-16T16:04:40-04:00</lastmod>
-  </url><url>
-    <loc>https://but-i-digress.ca/tags/blogging/</loc>
-    <lastmod>2025-05-16T16:04:40-04:00</lastmod>
-  </url><url>
-    <loc>https://but-i-digress.ca/tags/hugo/</loc>
-    <lastmod>2025-05-16T16:04:40-04:00</lastmod>
-  </url><url>
-    <loc>https://but-i-digress.ca/pages/</loc>
+    <loc>http://127.0.0.1:8000/pages/</loc>
     <lastmod>2025-05-16T16:04:40-04:00</lastmod>
   </url>
 </urlset>
