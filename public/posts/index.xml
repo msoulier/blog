@@ -2,67 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on But I Digress</title>
-    <link>https://but-i-digress.ca/posts/</link>
+    <link>http://0.0.0.0:8000/posts/</link>
     <description>Recent content in Posts on But I Digress</description>
     <generator>Hugo</generator>
-    <language>en-ca</language>
+    <language>en</language>
     <lastBuildDate>Fri, 16 May 2025 16:04:40 -0400</lastBuildDate>
-    <atom:link href="https://but-i-digress.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://0.0.0.0:8000/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Hugo</title>
-      <link>https://but-i-digress.ca/posts/welcome-to-hugo/</link>
+      <link>http://0.0.0.0:8000/posts/welcome-to-hugo/</link>
       <pubDate>Thu, 30 Jan 2025 00:00:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/welcome-to-hugo/</guid>
+      <guid>http://0.0.0.0:8000/posts/welcome-to-hugo/</guid>
       <description>&lt;p&gt;So previously I was using &lt;a href=&#34;https://getpelican.com/&#34;&gt;Pelican&lt;/a&gt; which is still a solid option for me, but since Hugo is so popular I thought that I would take a look at it. That, and a workflow publish from &lt;a href=&#34;https://orgmode.org/&#34;&gt;Org mode&lt;/a&gt;, which is now available with support in Emacs, NeoVim, and even some in VSCode.&lt;/p&gt;&#xA;&lt;p&gt;Happy with what I see so far. Stay tuned.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Blogging with org-mode</title>
-      <link>https://but-i-digress.ca/posts/writing-blog-in-org-mode/</link>
+      <link>http://0.0.0.0:8000/posts/writing-blog-in-org-mode/</link>
       <pubDate>Sun, 02 Feb 2025 15:50:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/writing-blog-in-org-mode/</guid>
+      <guid>http://0.0.0.0:8000/posts/writing-blog-in-org-mode/</guid>
       <description>&lt;p&gt;So, as I haven&amp;rsquo;t used that &lt;strong&gt;other&lt;/strong&gt; editor in many, many years, with all of the hype around &lt;a href=&#34;https://www.spacemacs.org/&#34;&gt;Spacemacs&lt;/a&gt;, &lt;a href=&#34;https://github.com/doomemacs&#34;&gt;Doom Emacs&lt;/a&gt;, etc., I thought that I would take another look. Granted, &lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt; has been forked as &lt;a href=&#34;https://neovim.io/&#34;&gt;NeoVim&lt;/a&gt;, with fun packages to compete like &lt;a href=&#34;https://nvchad.com/&#34;&gt;NVChad&lt;/a&gt;, but there has always been something about &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; that intriged me, and horrified me at the same time.&lt;/p&gt;&#xA;&lt;p&gt;The joke was always that Emacs was a wonderful operating system, it just needed a decent editor. Well, if that is a reference to Vi keybindings then &lt;a href=&#34;https://github.com/emacs-evil/evil&#34;&gt;evil-mode&lt;/a&gt; works pretty damn well, at least as good as the &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=vscodevim.vim&#34;&gt;vim extension&lt;/a&gt; for &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VS Code&lt;/a&gt;. And, using Emacs keybindings isn&amp;rsquo;t that hard, although it is definitely a 2-handed exercise and might possibly contribute to carpal tunnel syndrome.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Would you like to buy a vowel?</title>
-      <link>https://but-i-digress.ca/posts/buy-a-vowel/</link>
+      <link>http://0.0.0.0:8000/posts/buy-a-vowel/</link>
       <pubDate>Sun, 02 Feb 2025 17:36:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/buy-a-vowel/</guid>
+      <guid>http://0.0.0.0:8000/posts/buy-a-vowel/</guid>
       <description>&lt;p&gt;I don&amp;rsquo;t get Marketing, I really don&amp;rsquo;t. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Imagine it. WndRvr&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;I mean, how did they even say it? Try it, right now, just to yourself.&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re likely paid better than me, but I just don&amp;rsquo;t get it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kingston Crosswalk</title>
-      <link>https://but-i-digress.ca/posts/kingston-crosswalk/</link>
+      <link>http://0.0.0.0:8000/posts/kingston-crosswalk/</link>
       <pubDate>Mon, 03 Feb 2025 06:33:00 -0500</pubDate>
-      <guid>https://but-i-digress.ca/posts/kingston-crosswalk/</guid>
+      <guid>http://0.0.0.0:8000/posts/kingston-crosswalk/</guid>
       <description>&lt;p&gt;In the summer of 2022 I took my lovely wife Maria to the exotic town of Kingston, Ontario for a weekend. The weather was beautiful, the AirBnB we stayed in was very nice, and overall we had a nice weekend, beyond my terrible overall lack of planning.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;You have to plan more than just the destination and accomodations, Michael.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Still, Kingston had an oddity that did stand out, when we walked down towards the water.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Compile a custom emacs 29.4 on Debian 12</title>
-      <link>https://but-i-digress.ca/posts/build-emacs-debian/</link>
+      <link>http://0.0.0.0:8000/posts/build-emacs-debian/</link>
       <pubDate>Fri, 16 May 2025 09:33:00 -0400</pubDate>
-      <guid>https://but-i-digress.ca/posts/build-emacs-debian/</guid>
+      <guid>http://0.0.0.0:8000/posts/build-emacs-debian/</guid>
       <description>&lt;p&gt;So, while I do love Debian, it does often show its age. It is very stable, and to remain stable it is often using older versions of software. When I decided to get back into Emacs for org-mode, I found it easier to use a more recent version than Debian provides. This turned out to be fairly simple.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/emacs-mirror/emacs.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd emacs&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install autoconf automake libtool texinfo libgccjit-12-dev libgtk-4-dev libxaw7-dev libgnutls28-dev libgif-dev ripgrep libncurses-dev makeinfo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/emacs-mirror/emacs.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd emacs&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;autoreconf -vi&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./configure --prefix&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$HOME/emacs --with-native-compilation&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make -j8&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make install&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Optionally, if you want pgtk support:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Medical Questionnaire</title>
-      <link>https://but-i-digress.ca/posts/medical-questionnaire/</link>
+      <link>http://0.0.0.0:8000/posts/medical-questionnaire/</link>
       <pubDate>Mon, 17 Mar 2025 14:12:00 -0400</pubDate>
-      <guid>https://but-i-digress.ca/posts/medical-questionnaire/</guid>
+      <guid>http://0.0.0.0:8000/posts/medical-questionnaire/</guid>
       <description>&lt;p&gt;I was just at the Ottawa hospital and one of the questions on their pre-screening questionnaire was,&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Do you have Dementia?&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;My response was, &amp;ldquo;How would I know?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;Seems fair to me.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Emacs woes</title>
-      <link>https://but-i-digress.ca/posts/emacs-woes/</link>
+      <link>http://0.0.0.0:8000/posts/emacs-woes/</link>
       <pubDate>Sat, 22 Mar 2025 00:00:00 -0400</pubDate>
-      <guid>https://but-i-digress.ca/posts/emacs-woes/</guid>
+      <guid>http://0.0.0.0:8000/posts/emacs-woes/</guid>
       <description>&lt;p&gt;So I recently got back into using &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;, primarily as a productivity tool. While it might be more at some point, my best programming weapons are still &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt; and &lt;a href=&#34;https://www.vim.org/&#34;&gt;Vim&lt;/a&gt;, sometimes &lt;a href=&#34;https://neovim.io/&#34;&gt;NeoVim&lt;/a&gt;, and usually in combination with &lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;TMux&lt;/a&gt; and the &lt;a href=&#34;https://github.com/christoomey/vim-tmux-navigator&#34;&gt;vim-tmux-navigator&lt;/a&gt; plugin. But I can always go into that later, or you can search for what is likely a better explanation elsewhere.&lt;/p&gt;&#xA;&lt;p&gt;Emacs, originally short for &amp;ldquo;Editor Macros&amp;rdquo;, is quite well named. People come to Emacs looking for a direct comparison between VSCode and other solutions, which is foolish, as it turns out. The best explanation I heard was that Emacs is not an editor, it is a toolkit for building the perfect editor for you. But like a lot of things, there is some assembly required.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sway, using conky as bar</title>
-      <link>https://but-i-digress.ca/posts/sway-conky/</link>
+      <link>http://0.0.0.0:8000/posts/sway-conky/</link>
       <pubDate>Fri, 16 May 2025 15:35:00 -0400</pubDate>
-      <guid>https://but-i-digress.ca/posts/sway-conky/</guid>
+      <guid>http://0.0.0.0:8000/posts/sway-conky/</guid>
       <description>&lt;p&gt;So while it is important to know how to use Gnome on a linux desktop, the fact is that it is not my favorite desktop environment for linux. It is far too &amp;ldquo;dumbed-down&amp;rdquo; and made mostly for the masses, and I tend to be more of a &amp;ldquo;power-user&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;In the past, I became a big fan of the &lt;a href=&#34;https://i3wm.org/&#34;&gt;I3&lt;/a&gt; tiling window manager. It just fit the way that I work, and I found myself highly productive with it. But I3 was made to integrate with &lt;a href=&#34;https://www.x.org/&#34;&gt;Xorg&lt;/a&gt;, and that was beginning to show its age, so the community has been working on a more modern replacement for X, being &lt;a href=&#34;https://wayland.freedesktop.org/&#34;&gt;Wayland&lt;/a&gt;. But I3 doesn&amp;rsquo;t work with Wayland! The horror!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Your own ESXi (kinda) with virt-manager</title>
+      <link>http://0.0.0.0:8000/posts/virt-manager/</link>
+      <pubDate>Fri, 16 May 2025 16:04:40 -0400</pubDate>
+      <guid>http://0.0.0.0:8000/posts/virt-manager/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
