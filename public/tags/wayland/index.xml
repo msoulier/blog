@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wayland on But I Digress</title>
-    <link>http://0.0.0.0:8000/tags/wayland/</link>
+    <link>https://but-i-digress.ca/tags/wayland/</link>
     <description>Recent content in Wayland on But I Digress</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 16 May 2025 16:04:40 -0400</lastBuildDate>
-    <atom:link href="http://0.0.0.0:8000/tags/wayland/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://but-i-digress.ca/tags/wayland/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sway, using conky as bar</title>
-      <link>http://0.0.0.0:8000/posts/sway-conky/</link>
+      <link>https://but-i-digress.ca/posts/sway-conky/</link>
       <pubDate>Fri, 16 May 2025 15:35:00 -0400</pubDate>
-      <guid>http://0.0.0.0:8000/posts/sway-conky/</guid>
+      <guid>https://but-i-digress.ca/posts/sway-conky/</guid>
       <description>&lt;p&gt;So while it is important to know how to use Gnome on a linux desktop, the fact is that it is not my favorite desktop environment for linux. It is far too &amp;ldquo;dumbed-down&amp;rdquo; and made mostly for the masses, and I tend to be more of a &amp;ldquo;power-user&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;In the past, I became a big fan of the &lt;a href=&#34;https://i3wm.org/&#34;&gt;I3&lt;/a&gt; tiling window manager. It just fit the way that I work, and I found myself highly productive with it. But I3 was made to integrate with &lt;a href=&#34;https://www.x.org/&#34;&gt;Xorg&lt;/a&gt;, and that was beginning to show its age, so the community has been working on a more modern replacement for X, being &lt;a href=&#34;https://wayland.freedesktop.org/&#34;&gt;Wayland&lt;/a&gt;. But I3 doesn&amp;rsquo;t work with Wayland! The horror!&lt;/p&gt;</description>
     </item>
   </channel>
