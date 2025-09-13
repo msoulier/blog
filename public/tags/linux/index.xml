@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on But I Digress</title>
-    <link>http://127.0.0.1:8000/tags/linux/</link>
+    <link>https://but-i-digress.ca/tags/linux/</link>
     <description>Recent content in Linux on But I Digress</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Sep 2025 18:55:32 -0400</lastBuildDate>
-    <atom:link href="http://127.0.0.1:8000/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://but-i-digress.ca/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compile a custom emacs 29.4 on Debian 12</title>
-      <link>http://127.0.0.1:8000/posts/build-emacs-debian/</link>
+      <link>https://but-i-digress.ca/posts/build-emacs-debian/</link>
       <pubDate>Fri, 16 May 2025 09:33:00 -0400</pubDate>
-      <guid>http://127.0.0.1:8000/posts/build-emacs-debian/</guid>
+      <guid>https://but-i-digress.ca/posts/build-emacs-debian/</guid>
       <description>&lt;p&gt;So, while I do love Debian, it does often show its age. It is very stable, and to remain stable it is often using older versions of software. When I decided to get back into Emacs for org-mode, I found it easier to use a more recent version than Debian provides. This turned out to be fairly simple.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/emacs-mirror/emacs.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd emacs&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install autoconf automake libtool texinfo libgccjit-12-dev libgtk-4-dev libxaw7-dev libgnutls28-dev libgif-dev ripgrep libncurses-dev makeinfo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/emacs-mirror/emacs.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd emacs&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;autoreconf -vi&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./configure --prefix&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$HOME/emacs --with-native-compilation&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make -j8&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make install&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Optionally, if you want pgtk support:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sway, using conky as bar</title>
-      <link>http://127.0.0.1:8000/posts/sway-conky/</link>
+      <link>https://but-i-digress.ca/posts/sway-conky/</link>
       <pubDate>Fri, 16 May 2025 15:35:00 -0400</pubDate>
-      <guid>http://127.0.0.1:8000/posts/sway-conky/</guid>
+      <guid>https://but-i-digress.ca/posts/sway-conky/</guid>
       <description>&lt;p&gt;So while it is important to know how to use Gnome on a linux desktop, the fact is that it is not my favorite desktop environment for linux. It is far too &amp;ldquo;dumbed-down&amp;rdquo; and made mostly for the masses, and I tend to be more of a &amp;ldquo;power-user&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;In the past, I became a big fan of the &lt;a href=&#34;https://i3wm.org/&#34;&gt;I3&lt;/a&gt; tiling window manager. It just fit the way that I work, and I found myself highly productive with it. But I3 was made to integrate with &lt;a href=&#34;https://www.x.org/&#34;&gt;Xorg&lt;/a&gt;, and that was beginning to show its age, so the community has been working on a more modern replacement for X, being &lt;a href=&#34;https://wayland.freedesktop.org/&#34;&gt;Wayland&lt;/a&gt;. But I3 doesn&amp;rsquo;t work with Wayland! The horror!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Go for desktop tools over Python</title>
-      <link>http://127.0.0.1:8000/posts/go-desktop-tools/</link>
-      <pubDate>Sat, 13 Sep 2025 22:47:00 -0400</pubDate>
-      <guid>http://127.0.0.1:8000/posts/go-desktop-tools/</guid>
+      <link>https://but-i-digress.ca/posts/go-desktop-tools/</link>
+      <pubDate>Sat, 13 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://but-i-digress.ca/posts/go-desktop-tools/</guid>
       <description>&lt;p&gt;So for some time I have primarily used &lt;a href=&#34;https://python.org&#34;&gt;Python&lt;/a&gt; as my language of choice for most&#xA;projects, and for my own desktop tools. Python is a very powerful choice for&#xA;server-side solutions, and can definitely be used for desktop tools but does&#xA;offer some problems.&lt;/p&gt;&#xA;&lt;p&gt;Inevitably, Python solutions require Python modules. If your OS packages them&#xA;then maybe you can use the native packaging solution to install them, but I&#xA;often find that this is not the case. I don&amp;rsquo;t like to install modules globally&#xA;outside of the packaging system, so I end up making liberal use of &lt;a href=&#34;https://docs.python.org/3/library/venv.html&#34;&gt;virtualenvs&lt;/a&gt;,&#xA;but then it gets worse when you need a specific Python version.&lt;/p&gt;</description>
     </item>
   </channel>

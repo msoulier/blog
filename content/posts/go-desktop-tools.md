@@ -1,12 +1,11 @@
 +++
 title = "Go for desktop tools over Python"
 author = ["Michael Soulier"]
-date = 2025-09-13T22:47:00-04:00
-lastmod = 2025-09-13T18:55:32-04:00
+date = 2025-09-13
 tags = ["golang", "python", "linux"]
 categories = ["fun"]
 draft = false
-weight = 2009
+weight = 2025
 +++
 
 So for some time I have primarily used [Python](https://python.org) as my language of choice for most

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marketing on But I Digress</title>
-    <link>http://127.0.0.1:8000/tags/marketing/</link>
+    <link>https://but-i-digress.ca/tags/marketing/</link>
     <description>Recent content in Marketing on But I Digress</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 16 May 2025 16:04:40 -0400</lastBuildDate>
-    <atom:link href="http://127.0.0.1:8000/tags/marketing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://but-i-digress.ca/tags/marketing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Would you like to buy a vowel?</title>
-      <link>http://127.0.0.1:8000/posts/buy-a-vowel/</link>
+      <link>https://but-i-digress.ca/posts/buy-a-vowel/</link>
       <pubDate>Sun, 02 Feb 2025 17:36:00 -0500</pubDate>
-      <guid>http://127.0.0.1:8000/posts/buy-a-vowel/</guid>
+      <guid>https://but-i-digress.ca/posts/buy-a-vowel/</guid>
       <description>&lt;p&gt;I don&amp;rsquo;t get Marketing, I really don&amp;rsquo;t. Someone actually got paid to do this, and the company must have paid a lot of money to rebrand like this, but can you imagine the meeting when this was pitched to the suits in some office?&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Imagine it. WndRvr&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;I mean, how did they even say it? Try it, right now, just to yourself.&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re likely paid better than me, but I just don&amp;rsquo;t get it.&lt;/p&gt;</description>
     </item>
   </channel>
